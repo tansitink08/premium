@@ -258,7 +258,7 @@ local v16 = {
         Title = "Setting"
     }),
     Status = v15:AddTab({
-        Title = "Server"
+        Title = "Status"
     }),
     Stats = v15:AddTab({
         Title = "Stats"
@@ -270,7 +270,7 @@ local v16 = {
         Title = "Teleport"
     }),
     Visual = v15:AddTab({
-        Title = "Troll"
+        Title = "Visual"
     }),
     Fruit = v15:AddTab({
         Title = "Fruit"
@@ -285,8 +285,10 @@ local v16 = {
         Title = "Shop"
     }),
     Misc = v15:AddTab({
-        Title = "Others"
-    })
+        Title = "Misc"
+    }),
+    OneClick = v15:AddTab({
+        Title = "OneClick"    
 };
 local v17 = v14.Options;
 local v18 = game.PlaceId;
