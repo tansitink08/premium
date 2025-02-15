@@ -286,6 +286,7 @@ local v16 = {
     }),
     Misc = v15:AddTab({
         Title = "Misc"
+    })
 };
 local v17 = v14.Options;
 local v18 = game.PlaceId;
