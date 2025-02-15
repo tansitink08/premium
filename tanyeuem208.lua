@@ -288,7 +288,8 @@ local v16 = {
         Title = "Misc"
     }),
     OneClick = v15:AddTab({
-        Title = "OneClick"    
+        Title = "OneClick"
+    })
 };
 local v17 = v14.Options;
 local v18 = game.PlaceId;
