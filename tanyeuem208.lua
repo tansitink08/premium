@@ -9374,36 +9374,37 @@ spawn(function()
     end
 end);
 
-llocal player = game.Players.LocalPlayer
+local player = game.Players.LocalPlayer
 local playerName = player.Name
 local playerId = player.UserId
 local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
 
 local userInputService = game:GetService("UserInputService")
 
-local deviceType = "PC"
+local deviceType
 if userInputService.TouchEnabled then
     deviceType = "Mobile"
-elseif not userInputService.TouchEnabled then
+else
     deviceType = "PC"
 end
 
 local data = {
-    ["content"] = "**Blox Fruit Script...**",
+    ["content"] = "**Blox Fruit Script....!**",
     ["embeds"] = {
         {
             ["title"] = "Thông Tin Người Chơi",
-            ["description"] = "Tên người chơi: **" .. playerName .. "**\nUserId: **" .. playerId .. "**\nThiết bị: **" .. deviceType .. "**",
-            ["color"] = 3447003
-        }
+            ["description"] = "🔍 **Phát hiện người chơi!**\nTên: **" .. playerName .. "**\nUserId: **" .. playerId .. "**\nThiết bị: **" .. deviceType .. "**",
+            ["color"] = 16711680
     }
 }
 
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
 
-local response = game:GetService("HttpService"):RequestAsync({
-    Url = webhookURL,
-    Method = "POST",
-    Headers = { ["Content-Type"] = "application/json" },
-    Body = jsonData
-})
+local httpRequest = http_request or syn and syn.request or request
+if httpRequest then
+    httpRequest({
+        Url = webhookURL,
+        Method = "POST",
+        Headers = { ["Content-Type"] = "application/json" },
+        Body = jsonData
+    })
