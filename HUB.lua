@@ -15,7 +15,7 @@ local gameId = game.PlaceId
 if gameId == 2753915549 or gameId == 4442272183 or gameId == 7449423635 then
     -- Blox Fruits
     print("Phát hiện blob kĩd, exec script....")
-    safeLoad("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/tanyeuem208.lua")
+    safeLoad("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/tanyeuem208.lua")
 elseif gameId == 16732694052 then
     -- Fisch
     print("Phát hiện game câu cá xàm cặ, exec script....")
