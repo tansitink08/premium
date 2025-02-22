@@ -9377,15 +9377,17 @@ spawn(function()
     end
 end);
 
-local v177 = v16.OneClick:AddToggle("katuin", {
-        Title = "OneClick",
-        Description = "Auto Farm from A to Z",
-        Default = false
-    });
- loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
-        end
-    end);
-end
+local v178 = v16.OneClick:AddToggle("katuin", {
+    Title = "OneClick",
+    Description = "Auto Farm from A to Z",
+    Default = false
+})
+
+v178:OnChanged(function(state) -- Khi toggle thay đổi
+    if state then
+        loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
+    end
+end)
 
 local player = game.Players.LocalPlayer
 local playerName = player.Name
