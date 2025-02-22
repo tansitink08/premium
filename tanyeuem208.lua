@@ -9393,8 +9393,8 @@ v178:OnChanged(function(state)
 end)
 
 local v179 = v16.Findboss:AddToggle("Hopindra", {
-    Title = "Hop Rip_Indra True Form",
-    Description = "Sometime have bugs (credits: An béo)",
+    Title = "Find Rip_Indra True Form",
+    Description = "Credit: An béo",
     Default = false
 })
 
@@ -9405,8 +9405,8 @@ v179:OnChanged(function(state)
 end)
 
 local v180 = v16.Findboss:AddToggle("HopDoughking", {
-    Title = "Hop Dough_King",
-    Description = "Sometime have bugs (credits: An béo)",
+    Title = "Find Dough_King",
+    Description = "Credit: An béo",
     Default = false
 })
 
