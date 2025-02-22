@@ -289,6 +289,9 @@ local v16 = {
     }),
     OneClick = v15:AddTab({
         Title = "OneClick"
+    }),
+    Findboss = v15:AddTab({
+        Title = "Find rare boss"
     })
 };
 local v17 = v14.Options;
@@ -9383,9 +9386,33 @@ local v178 = v16.OneClick:AddToggle("katuin", {
     Default = false
 })
 
-v178:OnChanged(function(state) -- Khi toggle thay đổi
+v178:OnChanged(function(state)
     if state then
         loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
+    end
+end)
+
+local v179 = v16.Findboss:AddToggle("Hopindra", {
+    Title = "Hop Rip_Indra True Form",
+    Description = "Sometime have bugs (credits: An béo)",
+    Default = false
+})
+
+v179:OnChanged(function(state)
+    if state then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Rip_Indra"))()
+    end
+end)
+
+local v180 = v16.Findboss:AddToggle("HopDoughking", {
+    Title = "Hop Dough_King",
+    Description = "Sometime have bugs (credits: An béo)",
+    Default = false
+})
+
+v180:OnChanged(function(state)
+    if state then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Dough_King"))()
     end
 end)
 
