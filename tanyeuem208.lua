@@ -286,6 +286,9 @@ local v16 = {
     }),
     Misc = v15:AddTab({
         Title = "Misc"
+    }),
+    OneClick = v15:AddTab({
+        Title = "OneClick"
     })
 };
 local v17 = v14.Options;
