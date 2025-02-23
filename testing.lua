@@ -9111,7 +9111,7 @@ local v166 = v16.Sea:AddToggle("trialdraco", {
 
 v166:OnChanged(function(state)
     if state then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Rip_Indra"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
     end
 end)
 local v167 = v16.Sea:AddToggle("ToggleTrialTeleport", {
