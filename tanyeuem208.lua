@@ -9103,12 +9103,19 @@ v165:OnChanged(function(v397)
         end);
     end
 end);
-local v166 = v16.Sea:AddParagraph({
-    Title = "Auto trial Draco race v4 (soon)",
-    Content = ""
-});
+local v166 = v16.Sea:AddToggle("trialdraco", {
+    Title = "Trial Draco Race V4",
+    Description = "Fly Script",
+    Default = false
+})
+
+v166:OnChanged(function(state)
+    if state then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    end
+end)
 local v167 = v16.Sea:AddToggle("ToggleTrialTeleport", {
-    Title = "Tweem to draco race",
+    Title = "Tween to draco race door",
     Description = "",
     Default = false
 });
