@@ -142,6 +142,7 @@ end
 
 -- Bắt đầu hiệu ứng chuyển màu
 changeColorSmoothly()
+end
 
 local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
 local v15 = v14:CreateWindow({
