@@ -16,6 +16,13 @@ frame.Size = UDim2.new(0, 400, 0, 350)
 frame.Position = UDim2.new(0.5, -200, 0.5, -175)
 frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
+-- Tạo lớp nền mờ
+local blurBackground = Instance.new("Frame")
+blurBackground.Parent = frame
+blurBackground.Size = UDim2.new(1, 0, 1, 0)
+blurBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+blurBackground.BackgroundTransparency = 0.5  -- Điều chỉnh độ trong suốt của nền mờ
+
 -- Bo tròn góc cho GUI chính (frame)
 local frameCorner = Instance.new("UICorner")
 frameCorner.CornerRadius = UDim.new(0, 20)  -- Điều chỉnh độ bo tròn của frame
