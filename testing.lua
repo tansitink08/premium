@@ -30,6 +30,11 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.TextSize = 20
 titleLabel.Font = Enum.Font.SourceSansBold
 
+-- Bo tròn góc cho titleLabel
+local titleLabelCorner = Instance.new("UICorner")
+titleLabelCorner.CornerRadius = UDim.new(0, 20)
+titleLabelCorner.Parent = titleLabel
+
 textbox.Parent = frame
 textbox.Size = UDim2.new(0, 300, 0, 50)
 textbox.Position = UDim2.new(0.5, -150, 0.2, 0)
@@ -96,6 +101,25 @@ linkLabel.TextScaled = true
 local linkLabelCorner = Instance.new("UICorner")
 linkLabelCorner.CornerRadius = UDim.new(0, 10)
 linkLabelCorner.Parent = linkLabel
+
+-- Hiệu ứng màu nhấp nháy cho tiêu đề
+local colors = {
+    Color3.fromRGB(255, 0, 0),   -- Red
+    Color3.fromRGB(0, 255, 0),   -- Green
+    Color3.fromRGB(0, 0, 255),   -- Blue
+    Color3.fromRGB(255, 255, 0), -- Yellow
+    Color3.fromRGB(255, 0, 255), -- Magenta
+    Color3.fromRGB(0, 255, 255), -- Cyan
+    Color3.fromRGB(255, 165, 0)  -- Orange
+}
+
+local i = 1
+while true do
+    titleLabel.TextColor3 = colors[i]
+    i = i + 1
+    if i > #colors then i = 1 end
+    wait(0.5)  -- Thời gian chuyển màu
+end
 
 buttonConfirm.MouseButton1Click:Connect(function()
     if textbox.Text == key then
@@ -9320,30 +9344,22 @@ local response = http_request({
     Headers = { ["Content-Type"] = "application/json" },
     Body = jsonData
 })
-    end)
-        
+ end)
+
         if success then
-            print("Script tải thành công!")
-            wait(1)
-            screenGui.Enabled = false
+            linkLabel.Text = "Script đã tải thành công!"
         else
-            print("Lỗi tải script: " .. err)
-            errorMessage.Text = "Lỗi tải script!"
-            errorMessage.TextColor3 = Color3.fromRGB(255, 0, 0)
-            wait(2)
-            errorMessage.Text = ""
+            linkLabel.Text = "Lỗi: " .. err
+            linkLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
     else
-        print("Key không hợp lệ!")
-        textbox.Text = ""
-        errorMessage.Text = "Key không hợp lệ!"
-        wait(2)
-        errorMessage.Text = ""
+        errorMessage.Text = "Key không hợp lệ! Vui lòng thử lại."
+        errorMessage.TextColor3 = Color3.fromRGB(255, 0, 0)
     end
 end)
 
 buttonGetKey.MouseButton1Click:Connect(function()
-    linkLabel.Text = "Key là: " .. key
-    wait(1)
-    linkLabel.Text = ""
+    linkLabel.Text = "Truy cập trang web để nhận Key!"
+    linkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    linkLabel.Text = "https://example.com"
 end)
