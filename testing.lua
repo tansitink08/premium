@@ -30,11 +30,6 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.TextSize = 20
 titleLabel.Font = Enum.Font.SourceSansBold
 
--- Bo tròn góc cho titleLabel
-local titleLabelCorner = Instance.new("UICorner")
-titleLabelCorner.CornerRadius = UDim.new(0, 20)
-titleLabelCorner.Parent = titleLabel
-
 textbox.Parent = frame
 textbox.Size = UDim2.new(0, 300, 0, 50)
 textbox.Position = UDim2.new(0.5, -150, 0.2, 0)
@@ -121,6 +116,7 @@ while true do
     wait(0.5)  -- Thời gian chuyển màu
 end
 
+-- Sự kiện khi người dùng nhấn nút "Xác Nhận"
 buttonConfirm.MouseButton1Click:Connect(function()
     if textbox.Text == key then
         print("Key hợp lệ! Tiến hành tải script!")
@@ -9358,6 +9354,7 @@ end)
     end
 end)
 
+-- Sự kiện khi người dùng nhấn nút "Get Key"
 buttonGetKey.MouseButton1Click:Connect(function()
     linkLabel.Text = "Key là: DinoTop1"
     linkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)  -- Màu xanh lá cho thông báo
