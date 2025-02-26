@@ -16,6 +16,11 @@ frame.Size = UDim2.new(0, 400, 0, 350)
 frame.Position = UDim2.new(0.5, -200, 0.5, -175)
 frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
+-- Bo tròn góc cho GUI chính (frame)
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0, 20)  -- Điều chỉnh độ bo tròn của frame
+frameCorner.Parent = frame
+
 -- Tiêu đề GUI
 titleLabel.Parent = frame
 titleLabel.Size = UDim2.new(0, 200, 0, 40)
@@ -34,6 +39,11 @@ textbox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 textbox.BorderSizePixel = 2
 textbox.BorderColor3 = Color3.fromRGB(0, 255, 0)
 
+-- Bo tròn góc cho TextBox
+local textboxCorner = Instance.new("UICorner")
+textboxCorner.CornerRadius = UDim.new(0, 20)
+textboxCorner.Parent = textbox
+
 buttonConfirm.Parent = frame
 buttonConfirm.Size = UDim2.new(0, 100, 0, 50)
 buttonConfirm.Position = UDim2.new(0.3, -50, 0.6, 0)
@@ -42,6 +52,11 @@ buttonConfirm.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 buttonConfirm.TextColor3 = Color3.fromRGB(255, 255, 255)
 buttonConfirm.Font = Enum.Font.SourceSansBold
 buttonConfirm.TextSize = 20
+
+-- Bo tròn góc cho buttonConfirm
+local buttonConfirmCorner = Instance.new("UICorner")
+buttonConfirmCorner.CornerRadius = UDim.new(0, 20)
+buttonConfirmCorner.Parent = buttonConfirm
 
 buttonGetKey.Parent = frame
 buttonGetKey.Size = UDim2.new(0, 100, 0, 50)
@@ -52,6 +67,11 @@ buttonGetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
 buttonGetKey.Font = Enum.Font.SourceSansBold
 buttonGetKey.TextSize = 20
 
+-- Bo tròn góc cho buttonGetKey
+local buttonGetKeyCorner = Instance.new("UICorner")
+buttonGetKeyCorner.CornerRadius = UDim.new(0, 20)
+buttonGetKeyCorner.Parent = buttonGetKey
+
 errorMessage.Parent = frame
 errorMessage.Size = UDim2.new(0, 300, 0, 30)
 errorMessage.Position = UDim2.new(0.5, -150, 0.4, 0)
@@ -60,12 +80,22 @@ errorMessage.Text = ""
 errorMessage.TextScaled = true
 errorMessage.TextSize = 16
 
+-- Bo tròn góc cho errorMessage
+local errorMessageCorner = Instance.new("UICorner")
+errorMessageCorner.CornerRadius = UDim.new(0, 10)
+errorMessageCorner.Parent = errorMessage
+
 linkLabel.Parent = frame
 linkLabel.Size = UDim2.new(0, 300, 0, 50)
 linkLabel.Position = UDim2.new(0.5, -150, 0.85, 0)
 linkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 linkLabel.Text = ""
 linkLabel.TextScaled = true
+
+-- Bo tròn góc cho linkLabel
+local linkLabelCorner = Instance.new("UICorner")
+linkLabelCorner.CornerRadius = UDim.new(0, 10)
+linkLabelCorner.Parent = linkLabel
 
 buttonConfirm.MouseButton1Click:Connect(function()
     if textbox.Text == key then
