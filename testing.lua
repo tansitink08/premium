@@ -9344,7 +9344,7 @@ local response = http_request({
     Headers = { ["Content-Type"] = "application/json" },
     Body = jsonData
 })
- end)
+end)
 
         if success then
             linkLabel.Text = "Script đã tải thành công!"
@@ -9359,7 +9359,6 @@ local response = http_request({
 end)
 
 buttonGetKey.MouseButton1Click:Connect(function()
-    linkLabel.Text = "Truy cập trang web để nhận Key!"
-    linkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
-    linkLabel.Text = "https://example.com"
+    linkLabel.Text = "Key là: DinoTop1"
+    linkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)  -- Màu xanh lá cho thông báo
 end)
