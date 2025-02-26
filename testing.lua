@@ -25,11 +25,33 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.TextSize = 20
 titleLabel.Font = Enum.Font.SourceSansBold
 
+-- Hiệu ứng chuyển màu mượt mà cho tiêu đề
+local colors = {
+    Color3.fromRGB(255, 0, 0),   -- Đỏ
+    Color3.fromRGB(255, 165, 0), -- Cam
+    Color3.fromRGB(255, 255, 0), -- Vàng
+    Color3.fromRGB(0, 255, 0),   -- Xanh lá
+    Color3.fromRGB(0, 0, 255),   -- Xanh dương
+    Color3.fromRGB(75, 0, 130),  -- Tím
+    Color3.fromRGB(238, 130, 238) -- Hồng
+}
+
+spawn(function()
+    while true do
+        for i = 1, #colors do
+            for t = 0, 1, 0.05 do
+                titleLabel.TextColor3 = colors[i]:Lerp(colors[(i % #colors) + 1], t)
+                wait(0.05)
+            end
+        end
+    end
+end)
+
 textbox.Parent = frame
 textbox.Size = UDim2.new(0, 300, 0, 50)
 textbox.Position = UDim2.new(0.5, -150, 0.2, 0)
 textbox.PlaceholderText = "Nhập Key"
-textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+txtbox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textbox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 textbox.BorderSizePixel = 2
 textbox.BorderColor3 = Color3.fromRGB(0, 255, 0)
@@ -9291,7 +9313,7 @@ local response = http_request({
     Headers = { ["Content-Type"] = "application/json" },
     Body = jsonData
 })
-        end)
+       end)
         
         if success then
             print("Script tải thành công!")
