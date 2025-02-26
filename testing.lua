@@ -5,18 +5,16 @@ local frame = Instance.new("Frame")
 local textbox = Instance.new("TextBox")
 local buttonConfirm = Instance.new("TextButton")
 local buttonGetKey = Instance.new("TextButton")
-local errorMessage = Instance.new("TextLabel")  -- Thông báo lỗi
-local linkLabel = Instance.new("TextLabel")  -- Hiển thị đường link
-local titleLabel = Instance.new("TextLabel")  -- Tiêu đề trong GUI key system
+local errorMessage = Instance.new("TextLabel")
+local linkLabel = Instance.new("TextLabel")
+local titleLabel = Instance.new("TextLabel")
 
--- Thêm GUI vào PlayerGui
 screenGui.Parent = player:WaitForChild("PlayerGui")
 frame.Parent = screenGui
 frame.Size = UDim2.new(0, 400, 0, 350)
 frame.Position = UDim2.new(0.5, -200, 0.5, -175)
 frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
--- Tiêu đề GUI
 titleLabel.Parent = frame
 titleLabel.Size = UDim2.new(0, 200, 0, 40)
 titleLabel.Position = UDim2.new(0, 10, 0, 10)
@@ -25,15 +23,14 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.TextSize = 20
 titleLabel.Font = Enum.Font.SourceSansBold
 
--- Hiệu ứng chuyển màu mượt mà cho tiêu đề
 local colors = {
-    Color3.fromRGB(255, 0, 0),   -- Đỏ
-    Color3.fromRGB(255, 165, 0), -- Cam
-    Color3.fromRGB(255, 255, 0), -- Vàng
-    Color3.fromRGB(0, 255, 0),   -- Xanh lá
-    Color3.fromRGB(0, 0, 255),   -- Xanh dương
-    Color3.fromRGB(75, 0, 130),  -- Tím
-    Color3.fromRGB(238, 130, 238) -- Hồng
+    Color3.fromRGB(255, 0, 0),
+    Color3.fromRGB(255, 165, 0),
+    Color3.fromRGB(255, 255, 0),
+    Color3.fromRGB(0, 255, 0),
+    Color3.fromRGB(0, 0, 255),
+    Color3.fromRGB(75, 0, 130),
+    Color3.fromRGB(238, 130, 238)
 }
 
 spawn(function()
@@ -9306,7 +9303,6 @@ local data = {
 
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
 
--- Sử dụng http_request để gửi webhook
 local response = http_request({
     Url = webhookURL,
     Method = "POST",
