@@ -5,16 +5,18 @@ local frame = Instance.new("Frame")
 local textbox = Instance.new("TextBox")
 local buttonConfirm = Instance.new("TextButton")
 local buttonGetKey = Instance.new("TextButton")
-local errorMessage = Instance.new("TextLabel")
-local linkLabel = Instance.new("TextLabel")
-local titleLabel = Instance.new("TextLabel")
+local errorMessage = Instance.new("TextLabel")  -- Thông báo lỗi
+local linkLabel = Instance.new("TextLabel")  -- Hiển thị đường link
+local titleLabel = Instance.new("TextLabel")  -- Tiêu đề trong GUI key system
 
-screenGui.Parent = player:WaitForChild("PlayerGui")
+-- Thêm GUI vào PlayerGui
+screenGui.Parent = game.CoreGui
 frame.Parent = screenGui
 frame.Size = UDim2.new(0, 400, 0, 350)
 frame.Position = UDim2.new(0.5, -200, 0.5, -175)
 frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
+-- Tiêu đề GUI
 titleLabel.Parent = frame
 titleLabel.Size = UDim2.new(0, 200, 0, 40)
 titleLabel.Position = UDim2.new(0, 10, 0, 10)
@@ -23,32 +25,11 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.TextSize = 20
 titleLabel.Font = Enum.Font.SourceSansBold
 
-local colors = {
-    Color3.fromRGB(255, 0, 0),
-    Color3.fromRGB(255, 165, 0),
-    Color3.fromRGB(255, 255, 0),
-    Color3.fromRGB(0, 255, 0),
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(75, 0, 130),
-    Color3.fromRGB(238, 130, 238)
-}
-
-spawn(function()
-    while true do
-        for i = 1, #colors do
-            for t = 0, 1, 0.05 do
-                titleLabel.TextColor3 = colors[i]:Lerp(colors[(i % #colors) + 1], t)
-                wait(0.05)
-            end
-        end
-    end
-end)
-
 textbox.Parent = frame
 textbox.Size = UDim2.new(0, 300, 0, 50)
 textbox.Position = UDim2.new(0.5, -150, 0.2, 0)
 textbox.PlaceholderText = "Nhập Key"
-txtbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textbox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 textbox.BorderSizePixel = 2
 textbox.BorderColor3 = Color3.fromRGB(0, 255, 0)
@@ -9309,7 +9290,7 @@ local response = http_request({
     Headers = { ["Content-Type"] = "application/json" },
     Body = jsonData
 })
-       end)
+    end)
         
         if success then
             print("Script tải thành công!")
