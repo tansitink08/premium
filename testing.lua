@@ -98,6 +98,7 @@ CheckKey.MouseButton1Click:Connect(function()
         TextBox.Text = ""
         wait(1)
         ScreenGui.Enabled = false
+        --- put ur script here
     else
         TextBox.PlaceholderText = "Invalid key. Try again."
         TextBox.Text = ""
