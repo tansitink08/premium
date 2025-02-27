@@ -132,12 +132,7 @@ end)
 
 CheckKey.MouseButton1Click:Connect(function()
     local enteredKey = TextBox.Text
-    if isPremiumKey(enteredKey) then
-        _G.key = enteredKey -- Lưu key vào _G
-        TextBox.PlaceholderText = "Correct Premium Key!"
-        ScreenGui.Enabled = false
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
-    elseif isFreemiumKey(enteredKey) then
+    if isFreemiumKey(enteredKey) then
         _G.key = enteredKey -- Lưu key vào _G
         TextBox.PlaceholderText = "Correct Freemium Key!"
         ScreenGui.Enabled = false
