@@ -2,14 +2,14 @@ local player = game.Players.LocalPlayer
 
 -- Danh sách key Premium
 local premiumKeys = {
-    "DINO-6U4Q5-L1CA", 
+    "dino123", 
     "premiumKey1", 
     "premiumKey2",
 }
 
 -- Danh sách key Freemium
 local freemiumKeys = {
-    "freemiumKey1", 
+    "DINO-6U4Q5-L1CA", 
     "freemiumKey2", 
     "freemiumKey3",
 }
@@ -35,13 +35,19 @@ local function isFreemiumKey(inputKey)
 end
 
 -- Kiểm tra nếu _G.key đã được gán giá trị hợp lệ cho Premium từ bên ngoài source
-if _G.key and isPremiumKey(_G.key) then
-    print("Key Premium hợp lệ! Đang tải Premium script...")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
-    return
+if _G.key then
+    -- Kiểm tra nếu key trong _G hợp lệ cho Premium
+    if isPremiumKey(_G.key) then
+        print("Key Premium hợp lệ! Đang tải Premium script...")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
+        return
+    else
+        -- Nếu _G.key tồn tại nhưng không phải key hợp lệ cho Premium
+        print("Key không hợp lệ cho Premium, không tải script.")
+    end
 end
 
--- Hiển thị GUI yêu cầu nhập key nếu _G.key không hợp lệ hoặc chưa được gán
+-- Nếu _G.key không tồn tại hoặc không hợp lệ, tải Freemium script
 print("Hiển thị GUI Key System...")
 
 local ScreenGui = Instance.new("ScreenGui")
