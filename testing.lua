@@ -16,6 +16,7 @@ end
 if _G.key then
     if isValidKey(_G.key) then
         print("Key hợp lệ! Đang tải script...")
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua")()
     else
         print("Key không hợp lệ! Kết thúc chương trình.")
     end
