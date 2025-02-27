@@ -9,7 +9,7 @@ local premiumKeys = {
 
 -- Danh sách key Freemium
 local freemiumKeys = {
-    "DINO-6U4Q5-L1CA", 
+    "freedino_911", 
     "freemiumKey2", 
     "freemiumKey3",
 }
