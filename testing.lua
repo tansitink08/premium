@@ -35,10 +35,12 @@ local function isFreemiumKey(inputKey)
 end
 
 -- Kiểm tra nếu _G.key đã được gán giá trị hợp lệ cho Premium từ bên ngoài source
-if _G.key and isPremiumKey(_G.key) then
-    print("Key Premium hợp lệ! Đang tải Premium script...")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
-    return
+if _G.key then
+    if isPremiumKey(_G.key) then
+        print("Key Premium hợp lệ! Đang tải Premium script...")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
+        return
+    end
 end
 
 -- Hiển thị GUI yêu cầu nhập key nếu _G.key không hợp lệ hoặc chưa được gán
