@@ -9818,7 +9818,7 @@ wait(0.25);
 v5:Destroy();
 local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
 local v15 = v14:CreateWindow({
-    Title = "Dino Hub",
+    Title = "Dino Hub [Premium]",
     SubTitle = "| .gg/67tG8nmaQX",
     TabWidth = 160,
     Theme = "Darker",
