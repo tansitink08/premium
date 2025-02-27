@@ -2,14 +2,14 @@ local player = game.Players.LocalPlayer
 
 -- Danh sách key Premium
 local premiumKeys = {
-    "DINO-6U4Q5-L1CA", 
+    "dino123", 
     "premiumKey1", 
     "premiumKey2",
 }
 
 -- Danh sách key Freemium
 local freemiumKeys = {
-    "freemiumKey1", 
+    "DINO-6U4Q5-L1CA", 
     "freemiumKey2", 
     "freemiumKey3",
 }
