@@ -81,14 +81,14 @@ CheckKeyCorner.CornerRadius = UDim.new(0, 5)
 CheckKeyCorner.Parent = CheckKey
 
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://your-key-system.com") -- Thay bằng link lấy key hoặc đoạn text
+    setclipboard("https://loot-link.com/s?Kb3uIEvU") -- Thay bằng link lấy key hoặc đoạn text
     GetKey.Text = "Copied!"
     wait(1)
     GetKey.Text = "Get Key"
 end)
 
 local function validateKey(key)
-    return key == "Key"
+    return key == "DINO-6U4Q5-L1CA"
 end
 
 CheckKey.MouseButton1Click:Connect(function()
@@ -98,7 +98,7 @@ CheckKey.MouseButton1Click:Connect(function()
         TextBox.Text = ""
         wait(1)
         ScreenGui.Enabled = false
-        --- put ur script here
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/Dino.lua")()
     else
         TextBox.PlaceholderText = "Invalid key. Try again."
         TextBox.Text = ""
