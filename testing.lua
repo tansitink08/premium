@@ -104,7 +104,7 @@ CheckKey.MouseButton1Click:Connect(function()
         TextBox.Text = ""
         wait(1)
         ScreenGui.Enabled = false
-        --- put ur source
+       loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/freemium.lua")()
 else
         TextBox.PlaceholderText = "Invalid key. Try again."
         TextBox.Text = ""
