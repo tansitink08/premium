@@ -17,6 +17,7 @@ end
 if _G.key then
     if isValidKey(_G.key) then
         print("Key hợp lệ! Đang tải script...")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
