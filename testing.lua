@@ -1,6 +1,6 @@
 -- Danh sách các key hợp lệ
 local validKeys = {
-    "Key1",
+    "dino123",
     "Key2",
     "Key3",
 }
