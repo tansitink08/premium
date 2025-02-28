@@ -8761,7 +8761,7 @@ local v56 = v16.Misc:AddSection("Other");
 local v151 = v16.Misc:AddToggle("ToggleRejoin", {
     Title = "rejoin server",
     Description = "",
-    Default = true
+    Default = false
 });
 v151:OnChanged(function(v381)
     _G.AutoRejoin = v381;
