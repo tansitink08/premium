@@ -1,12 +1,22 @@
 local player = game.Players.LocalPlayer
 
--- Danh sách key Premium & Freemium
-local premiumKeys = { "dino123", "barongo911_Dino", "premiumKey2" }
-local freemiumKeys = { "freedino_911", "freemiumKey2", "freemiumKey3" }
+-- Danh sách key Premium
+local premiumKeys = {
+    "dino123", 
+    "barongo911_Dino", 
+    "premiumKey2",
+}
 
--- Hàm kiểm tra key
-local function isValidKey(keyList, inputKey)
-    for _, key in ipairs(keyList) do
+-- Danh sách key Freemium
+local freemiumKeys = {
+    "freedino_911", 
+    "freemiumKey2", 
+    "freemiumKey3",
+}
+
+-- Hàm kiểm tra key hợp lệ cho Premium
+local function isPremiumKey(inputKey)
+    for _, key in ipairs(premiumKeys) do
         if inputKey == key then
             return true
         end
@@ -14,9 +24,19 @@ local function isValidKey(keyList, inputKey)
     return false
 end
 
--- Nếu _G.key đã có sẵn, kiểm tra ngay
+-- Hàm kiểm tra key hợp lệ cho Freemium
+local function isFreemiumKey(inputKey)
+    for _, key in ipairs(freemiumKeys) do
+        if inputKey == key then
+            return true
+        end
+    end
+    return false
+end
+
+-- Kiểm tra nếu _G.key đã được gán giá trị hợp lệ cho Premium từ bên ngoài source
 if _G.key then
-    if isValidKey(premiumKeys, _G.key) then
+    if isPremiumKey(_G.key) then
         print("Key Premium hợp lệ! Đang tải Premium script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
@@ -25,8 +45,11 @@ if _G.key then
     end
 end
 
--- Hiển thị GUI nhập key
+-- Hiển thị GUI yêu cầu nhập key nếu _G.key không hợp lệ hoặc chưa được gán
 print("Hiển thị GUI Key System...")
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = player:WaitForChild("PlayerGui")
 
 local Frame = Instance.new("Frame")
 Frame.Size = UDim2.new(0, 400, 0, 300)
@@ -103,23 +126,22 @@ local CheckKeyCorner = Instance.new("UICorner")
 CheckKeyCorner.CornerRadius = UDim.new(0, 5)
 CheckKeyCorner.Parent = CheckKey
 
--- Sao chép link key vào clipboard
+-- Thêm phần setclipboard vào nút "Get Key"
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://loot-link.com/s?Kb3uIEvU")
+    setclipboard("https://loot-link.com/s?Kb3uIEvU") -- Lấy link hoặc text cần sao chép
     GetKey.Text = "Copied!"
     wait(1)
     GetKey.Text = "Get Key"
 end)
 
--- Kiểm tra key nhập vào
 CheckKey.MouseButton1Click:Connect(function()
     local enteredKey = TextBox.Text
-    if isValidKey(freemiumKeys, enteredKey) then
+    if isFreemiumKey(enteredKey) then
         _G.key = enteredKey -- Lưu key vào _G
-        TextBox.Text, TextBox.PlaceholderText = "", "Correct Freemium Key!"
+        TextBox.PlaceholderText = "Correct Freemium Key!"
         ScreenGui.Enabled = false
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/freemium.lua"))()
     else
-        TextBox.Text, TextBox.PlaceholderText = "", "Invalid key. Try again."
+        TextBox.PlaceholderText = "Invalid key. Try again."
     end
 end)
