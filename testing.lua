@@ -41,7 +41,13 @@ if _G.key then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
     else
-        player:Kick("[Invalid key]") -- Kick nếu key Premium sai
+        local player = game.Players.LocalPlayer 
+
+        local notifi = "[Invalid key]"
+
+        local message = string.format("\nPremium Announcement\n %s", notifi)
+
+        player:Kick(message)
     end
 end
 
