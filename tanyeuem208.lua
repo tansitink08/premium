@@ -3,7 +3,7 @@ local player = game.Players.LocalPlayer
 -- Danh sách key Premium
 local premiumKeys = {
     "dino123", 
-    "premiumKey1", 
+    "barongo911_Dino", 
     "premiumKey2",
 }
 
