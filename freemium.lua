@@ -8766,7 +8766,7 @@ local v151 = v16.Misc:AddToggle("ToggleRejoin", {
 v151:OnChanged(function(v381)
     _G.AutoRejoin = v381;
 end);
-v17.ToggleRejoin:SetValue(true);
+v17.ToggleRejoin:SetValue(false);
 spawn(function()
     while wait() do
         if _G.AutoRejoin then
