@@ -2604,7 +2604,7 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
 end
 v16.Home:AddButton({
     Title = "Discord",
-    Description = "Tham gia để cập nhật thông tin về Hub",
+    Description = "Thanks for buying, join for another update",
     Callback = function()
         setclipboard("https://discord.gg/67tG8nmaQX");
     end
@@ -2798,7 +2798,7 @@ task.spawn(function()
     end
 end);
 local v49 = v16.Main:AddToggle("ToggleLevel", {
-    Title = "Auto Farm Lv",
+    Title = "Auto Farm Level",
     Description = "",
     Default = false
 });
@@ -9400,7 +9400,7 @@ v178:OnChanged(function(state)
 end)
 
 local v179 = v16.Findboss:AddToggle("Hopindra", {
-    Title = "Find Rip_Indra True Form",
+    Title = "Find Rip_Indra True Form [Premium]",
     Description = "Credit: An béo",
     Default = false
 })
@@ -9412,7 +9412,7 @@ v179:OnChanged(function(state)
 end)
 
 local v180 = v16.Findboss:AddToggle("HopDoughking", {
-    Title = "Find Dough_King",
+    Title = "Find Dough_King [Premium]",
     Description = "Credit: An béo",
     Default = false
 })
