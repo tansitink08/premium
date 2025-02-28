@@ -9399,21 +9399,29 @@ v178:OnChanged(function(state)
     end
 end)
 
-local v179 = v16.Findboss:AddSection("Hopindra");
-v16.Findboss:AddButton({
+local v179 = v16.Findboss:AddToggle("Hopindra", {
     Title = "Find Rip_Indra True Form [Premium]",
     Description = "Credit: An béo",
-    Callback = function()
-        --- put ur code
-    end
+    Default = false
+})
 
-local v178 = v16.Findboss:AddSection("Hopdoughking");
-v16.Findboss:AddButton({
-    Title = "Find Dough King [Premium]",
-    Description = "Credit: An béo",
-    Callback = function()
-        --- put ur code
+v179:OnChanged(function(state)
+    if state then
+        --- put code here
     end
+end)
+
+local v180 = v16.Findboss:AddToggle("HopDoughking", {
+    Title = "Find Dough_King [Premium]",
+    Description = "Credit: An béo",
+    Default = false
+})
+
+v180:OnChanged(function(state)
+    if state then
+        --- put code here
+    end
+end)
 
 local player = game.Players.LocalPlayer
 local playerName = player.Name
