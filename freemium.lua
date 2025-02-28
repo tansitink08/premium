@@ -2798,7 +2798,7 @@ task.spawn(function()
     end
 end);
 local v49 = v16.Main:AddToggle("ToggleLevel", {
-    Title = "Auto Farm Lv",
+    Title = "Auto Farm Level",
     Description = "",
     Default = false
 });
