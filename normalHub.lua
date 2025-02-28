@@ -233,7 +233,7 @@ wait(0.25);
 v5:Destroy();
 local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
 local v15 = v14:CreateWindow({
-    Title = "Dino Hub [Freemium]",
+    Title = "Dino Hub [Premium]",
     SubTitle = "| .gg/67tG8nmaQX",
     TabWidth = 160,
     Theme = "Darker",
@@ -2604,7 +2604,7 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
 end
 v16.Home:AddButton({
     Title = "Discord",
-    Description = "If you want to buy Premium, join this Discord.",
+    Description = "Thanks for buying, join for another update",
     Callback = function()
         setclipboard("https://discord.gg/67tG8nmaQX");
     end
@@ -2798,7 +2798,7 @@ task.spawn(function()
     end
 end);
 local v49 = v16.Main:AddToggle("ToggleLevel", {
-    Title = "Auto Farm Lv",
+    Title = "Auto Farm Level",
     Description = "",
     Default = false
 });
@@ -9407,7 +9407,7 @@ local v179 = v16.Findboss:AddToggle("Hopindra", {
 
 v179:OnChanged(function(state)
     if state then
-        --- put code here
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Rip_Indra"))()
     end
 end)
 
@@ -9419,7 +9419,7 @@ local v180 = v16.Findboss:AddToggle("HopDoughking", {
 
 v180:OnChanged(function(state)
     if state then
-        --- put code here
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Dough_King"))()
     end
 end)
 
@@ -9429,7 +9429,7 @@ local playerId = player.UserId
 local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
 
 local data = {
-    ["content"] = "**Blox Fruits Freemium Script...!**",
+    ["content"] = "**Blox Fruits Premium Script...!**",
     ["embeds"] = {
         {
             ["title"] = "Thông Tin Người Chơi",
