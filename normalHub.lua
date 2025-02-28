@@ -2604,7 +2604,7 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
 end
 v16.Home:AddButton({
     Title = "Discord",
-    Description = "Tham gia để cập nhật thông tin về Hub",
+    Description = "If you want to buy Premium, join this Discord.",
     Callback = function()
         setclipboard("https://discord.gg/67tG8nmaQX");
     end
@@ -9399,29 +9399,21 @@ v178:OnChanged(function(state)
     end
 end)
 
-local v179 = v16.Findboss:AddToggle("Hopindra", {
-    Title = "Find Rip_Indra True Form",
+local v179 = v16.Findboss:AddSection("Hopindra");
+v16.Findboss:AddButton({
+    Title = "Find Rip_Indra True Form [Premium]",
     Description = "Credit: An béo",
-    Default = false
-})
-
-v179:OnChanged(function(state)
-    if state then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Rip_Indra"))()
+    Callback = function()
+        --- put ur code
     end
-end)
 
-local v180 = v16.Findboss:AddToggle("HopDoughking", {
-    Title = "Find Dough_King",
+local v178 = v16.Findboss:AddSection("Hopdoughking");
+v16.Findboss:AddButton({
+    Title = "Find Dough King [Premium]",
     Description = "Credit: An béo",
-    Default = false
-})
-
-v180:OnChanged(function(state)
-    if state then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Dough_King"))()
+    Callback = function()
+        --- put ur code
     end
-end)
 
 local player = game.Players.LocalPlayer
 local playerName = player.Name
@@ -9429,7 +9421,7 @@ local playerId = player.UserId
 local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
 
 local data = {
-    ["content"] = "**Blox Fruits Script...**",
+    ["content"] = "**Blox Fruits Freemium Script...!**",
     ["embeds"] = {
         {
             ["title"] = "Thông Tin Người Chơi",
