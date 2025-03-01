@@ -4,14 +4,14 @@ local player = game.Players.LocalPlayer
 local premiumKeys = {
     "dino123", 
     "barongo911_Dino", 
-    "premiumKey2",
+    "fdsdsh4ey)))sjaf",
 }
 
 -- Danh sách key Freemium
 local freemiumKeys = {
     "dinosaygec_08", 
-    "freemiumKey2", 
-    "freemiumKey3",
+    "dsjauiytwdsa", 
+    "dsah84578**",
 }
 
 -- Hàm kiểm tra key hợp lệ cho Premium
