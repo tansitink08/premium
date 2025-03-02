@@ -9,7 +9,7 @@ local premiumKeys = {
 
 -- Danh sách key Freemium
 local freemiumKeys = {
-    "dinosaygec_08", 
+    "Dino_XZC222", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
