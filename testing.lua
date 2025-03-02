@@ -19,7 +19,7 @@ print(response)
 
 if response == trueData then
   print("Key is valid")
-
+loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua")()
 else
   print("Key is invalid")
 end
