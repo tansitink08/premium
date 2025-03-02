@@ -134,7 +134,7 @@ CheckKeyCorner.Parent = CheckKey
 
 -- Thêm phần setclipboard vào nút "Get Key"
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://loot-link.com/s?Kb3uIEvU") -- Lấy link hoặc text cần sao chép
+    setclipboard("https://lootdest.org/s?VFcUlcm4") -- Lấy link hoặc text cần sao chép
     GetKey.Text = "Copied!"
     wait(1)
     GetKey.Text = "Get Key"
