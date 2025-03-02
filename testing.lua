@@ -10,7 +10,7 @@ KeyGuardLibrary.Set({
 })
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local key = "5a7d4ee665fa492ba8fa2f1a17ceb55a"
+local key = "Dino_98d0df36eecc4356b76dee421b192113"
 
 local Window = Fluent:CreateWindow({
     Title = "Dino Hub",
