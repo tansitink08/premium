@@ -9,7 +9,7 @@ KeyGuardLibrary.Set({
   falseData = falseData,
 })
 
-local key = "test"
+local key = _G.key
 
 local getkey = KeyGuardLibrary.getLink()
 print(getkey)
@@ -18,14 +18,12 @@ local response = KeyGuardLibrary.validateDefaultKey(key)
 print(response)
 
 if response == trueData then
-  print("Key is valid")
-else
-  print("Key is invalid")
-end
 
---[[
-  KeyGuardLibrary.validateDefaultKey(key) - Validate key
-  KeyGuardLibrary.validatePremiumKey(key) - Validate premium key
-  KeyGuardLibrary.getService() - Get service
-  KeyGuardLibrary.getLink() - Get link
-]]
+else
+  local player = game.Players.LocalPlayer
+
+  local notifi = "[Invalid key]"
+  local message = string.format("\nPremium Announcement\n %s", notifi)
+
+  player:Kick(message)
+end
