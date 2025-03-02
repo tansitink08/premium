@@ -18,7 +18,7 @@ local response = KeyGuardLibrary.validateDefaultKey(key)
 print(response)
 
 if response == trueData then
-
+loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua")()
 else
   local player = game.Players.LocalPlayer
 
