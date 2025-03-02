@@ -3,8 +3,8 @@ local trueData = "0c67891618b946c1876886c0fa2dd960"
 local falseData = "64cdd90596e444248a6633421445a83c"
 
 KeyGuardLibrary.Set({
-  publicToken = "8e0aab273a5d47fb90eaf746ffee85e6",
-  privateToken = "7bdf4ebc52424e0492d0a48dd9095439",
+  publicToken = "733c2e65bf42405da92788692aa61473",
+  privateToken = "78dc3c12fcfe4e89bac5bc1221ef1bbb",
   trueData = trueData,
   falseData = falseData,
 })
