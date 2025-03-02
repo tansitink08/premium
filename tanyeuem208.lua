@@ -1,20 +1,17 @@
 local player = game.Players.LocalPlayer
 
--- Danh sách key Premium
 local premiumKeys = {
     "vantan08", 
     "barongo911_Dino", 
     "fdsdsh4ey)))sjaf",
 }
 
--- Danh sách key Freemium
 local freemiumKeys = {
     "Dino_XZC222", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
 
--- Hàm kiểm tra key hợp lệ cho Premium
 local function isPremiumKey(inputKey)
     for _, key in ipairs(premiumKeys) do
         if inputKey == key then
@@ -24,7 +21,6 @@ local function isPremiumKey(inputKey)
     return false
 end
 
--- Hàm kiểm tra key hợp lệ cho Freemium
 local function isFreemiumKey(inputKey)
     for _, key in ipairs(freemiumKeys) do
         if inputKey == key then
@@ -34,7 +30,6 @@ local function isFreemiumKey(inputKey)
     return false
 end
 
--- Kiểm tra nếu _G.key đã được gán giá trị hợp lệ cho Premium từ bên ngoài source
 if _G.key then
     if isPremiumKey(_G.key) then
         print("Key Premium hợp lệ! Đang tải Premium script...")
@@ -51,7 +46,6 @@ if _G.key then
     end
 end
 
--- Hiển thị GUI yêu cầu nhập key nếu _G.key không hợp lệ hoặc chưa được gán
 print("Hiển thị GUI Key System...")
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -132,9 +126,8 @@ local CheckKeyCorner = Instance.new("UICorner")
 CheckKeyCorner.CornerRadius = UDim.new(0, 5)
 CheckKeyCorner.Parent = CheckKey
 
--- Thêm phần setclipboard vào nút "Get Key"
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://lootdest.org/s?VFcUlcm4") -- Lấy link hoặc text cần sao chép
+    setclipboard("https://lootdest.org/s?VFcUlcm4")
     GetKey.Text = "Copied!"
     wait(1)
     GetKey.Text = "Get Key"
@@ -143,7 +136,7 @@ end)
 CheckKey.MouseButton1Click:Connect(function()
     local enteredKey = TextBox.Text
     if isFreemiumKey(enteredKey) then
-        _G.key = enteredKey -- Lưu key vào _G
+        _G.key = enteredKey
         TextBox.PlaceholderText = "Correct Freemium Key!"
         ScreenGui.Enabled = false
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/freemium.lua"))()
