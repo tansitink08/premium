@@ -3,11 +3,11 @@ local player = game.Players.LocalPlayer
 local premiumKeys = {
     "vantan08", 
     "barongo911_Dino", 
-    "fdsdsh4ey)))sjaf",
+    "dino_takomonika",
 }
 
 local freemiumKeys = {
-    "Dino_XZC222", 
+    "Dino_Said)))2", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
