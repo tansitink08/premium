@@ -239,7 +239,7 @@ local v15 = v14:CreateWindow({
     Theme = "Darker",
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
-    MinimizeKey = Enum.KeyCode.LeftCtrl
+    MinimizeKey = Enum.KeyCode.End
 });
 local v16 = {
     Home = v15:AddTab({
