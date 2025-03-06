@@ -33,7 +33,7 @@ end
 if _G.key then
     if isPremiumKey(_G.key) then
         print("Key Premium hợp lệ! Đang tải Premium script...")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
         return
     else
         local player = game.Players.LocalPlayer 
