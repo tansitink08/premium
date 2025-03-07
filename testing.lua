@@ -65,6 +65,7 @@ else
                print("Key is valid")
                writefile(Directory, InputKey.Value)
                Window:Destroy()
+               loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/PremiumScripteskigui.lua")()
             else
                print("Key is invalid")
             end
