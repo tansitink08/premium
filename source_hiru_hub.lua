@@ -1963,19 +1963,19 @@ LGa:AddButton({
 })
 LGa:AddButton({
 	Title = "Show Item",
-	Description = "I'm Still Fixing....",
+	Description = "Not working now",
 	Callback = function()	
 	end
 })
 LGa:AddButton({
     Title = "Open Devil Fruit Shop [ Mirage ]",
-    Description = "I'm Still Fixing....",
+    Description = "Not working now",
     Callback = function()     
     end
 })
 LGa:AddButton({
     Title = "Open Devil Fruit Shop",
-    Description = "I'm Still Fixing....",
+    Description = "Not working now",
     Callback = function()            
     end
 })
@@ -8074,7 +8074,7 @@ Button.MouseButton1Click:Connect(function()
 end)
 --\\ ♡VIP♡
 ----------------------------------------------------------------------------------------------------
-print("--[[Hop Server If You Meet Game Admin]]--")
+print("--[[Hop server if owner or admin joins the game]]--")
 local targetPlayers = {
     ["red_game43"] = true,
     ["rip_indra"] = true,
@@ -8117,3 +8117,4 @@ if currentTime - lastNotificationTime >= notificationCooldown then
     })
     lastNotificationTime = currentTime
 end
+
