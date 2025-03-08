@@ -16,7 +16,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
+        Title = "Dino Hub",
         Text = "Loading",
         Duration = 5
     })
@@ -2728,7 +2728,7 @@ Main:AddButton({
     Title = "Copy discord invite link",
     Callback = function()
         pcall(function()
-            setclipboard("https://discord.gg/2YCGftRB")
+            setclipboard("https://discord.gg/67tG8nmaQX")
         end)
     end
 })
@@ -7411,7 +7411,7 @@ task.spawn(function()
                             EquipWeapon("Tushita")
                         elseif not hasNotified then
                             game.StarterGui:SetCore("SendNotification", {
-                                Title = "Hiru Hub",
+                                Title = "Dino Hub",
                                 Text = "Use! - Yama or Tushita",
                                 con = "rbxassetid://11995210995",
                                 Duration = 10,
@@ -8111,7 +8111,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
+        Title = "Dino Hub",
         Text = "Successfully",
         Duration = 1
     })
