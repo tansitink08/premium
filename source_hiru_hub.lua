@@ -9,7 +9,7 @@ if player then
     CommF_:InvokeServer("SetTeam", "Marines")
 end
 
-shared.LoaderTitle = "Loading Script....!";
+shared.LoaderTitle = "Loading Premium Script....!";
 shared.LoaderKeyFrames = {
     [1] = {
         1,
