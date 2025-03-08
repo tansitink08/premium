@@ -8052,7 +8052,7 @@ Button.Parent = ScreenGui
 Button.Size = UDim2.new(0, 50, 0, 50)
 Button.Position = UDim2.new(0.015, 0, 0.02, 20)
 Button.BackgroundTransparency = 1
-Button.Image = "rbxassetid://100310827714719"
+Button.Image = "rbxassetid://9267524137816"
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(1, 0)
 UICorner.Parent = Button
@@ -8072,7 +8072,6 @@ Button.MouseButton1Click:Connect(function()
         end)
     end
 end)
---\\ ♡VIP♡
 ----------------------------------------------------------------------------------------------------
 print("--[[Hop server if owner or admin joins the game]]--")
 local targetPlayers = {
