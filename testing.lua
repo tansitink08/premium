@@ -118,7 +118,7 @@ if KeyGuardian:ValidateKey(Key) then
                     return print("KeyGuardian not validated [3]"); -- crash
                 else
                     print("Whitelisted, Version: " .. (Mode))
-                    -- put script here
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
                 end
             end
         else
