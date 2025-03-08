@@ -7,7 +7,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "Dino_Said)))2", 
+    "HelloVietNam", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
