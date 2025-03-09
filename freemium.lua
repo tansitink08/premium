@@ -1564,7 +1564,7 @@ print("--[[Loaded UI]]--")
 Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Dino Hub [Freemium]",
-    SubTitle = "keyless will expire on September 5, 2025 GMT +7",
+    SubTitle = "keyless will expire on March 11, 2025 GMT +7",
     TabWidth = 160,
     Size = UDim2.fromOffset(500, 320),
     Acrylic = false, 
