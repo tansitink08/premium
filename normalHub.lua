@@ -4,7 +4,8 @@ game.GetService = function(self, service)
     if service == "RbxAnalyticsService" then
         return {
             GetClientId = function()
-                return "6f8a2b31-9c2d-4b0f-85c6-1e6a68b3e7d1" -- HWID giả mạo
+                -- HWID giả mạo
+                return "6f8a2b31-9c2d-4b0f-85c6-1e6a68b3e7d1"  -- HWID giả mạo cố định
             end
         }
     end
@@ -42,8 +43,8 @@ print("✅ HWID Whitelist Bypass Activated!")
 
 -- 📌 Chạy script paid sau khi bypass whitelist thành công
 local success, err = pcall(function()
-    getgenv().Key = "MARU-9DEQA-LEZP-EAD6-3WYO5-BH5LE"
-    getgenv().id = "1041709181557817377"
+    getgenv().Key = "MARU-9DEQA-LEZP-EAD6-3WYO5-BH5LE"  -- Nhập Key của bạn nếu cần
+    getgenv().id = "1041709181557817377"   -- Nhập ID nếu cần
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
 end)
 
