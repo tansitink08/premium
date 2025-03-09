@@ -1,132 +1,146 @@
-local KeyGuardian = loadstring(game:HttpGet('https://cdn.keyguardian.org/library/v2.lua'))()
+local player = game.Players.LocalPlayer
 
-KeyGuardian:Set({
-    ServiceToken = 733c2e65bf42405da92788692aa61473;
-    APIToken = 78dc3c12fcfe4e89bac5bc1221ef1bbb
-})
+local premiumKeys = {
+    "vantan08", 
+    "barongo911_Dino", 
+    "dino_takomonika",
+}
 
--- ServiceToken = publicToken
--- APIToken = privateToken
+--local freemiumKeys = {
+    --"HelloVietNam", 
+    --"dsjauiytwdsa", 
+    --"dsah84578**",
+--}
 
-local Key = "prefis8b03e264f1244d7da9db6149389aa1bf";
+local function isPremiumKey(inputKey)
+    for _, key in ipairs(premiumKeys) do
+        if inputKey == key then
+            return true
+        end
+    end
+    return false
+end
 
-print(KeyGuardian:GetKeylink())
+--local function isFreemiumKey(inputKey)
+    --for _, key in ipairs(freemiumKeys) do
+        --if inputKey == key then
+            --return true
+       -- end
+    --end
+    --return false
+--end
 
+if _G.key then
+    if isPremiumKey(_G.key) then
+        print("Key Premium hợp lệ! Đang tải Premium script...")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
+        return
+    else
+        local player = game.Players.LocalPlayer 
 
--- DO NOT CHANGE ANYTHING UNDER THIS, ONLY CHANGE THE LINE "-- put your script here"!!!!!!
--- DO NOT CHANGE ANYTHING UNDER THIS, ONLY CHANGE THE LINE "-- put your script here"!!!!!!
--- DO NOT CHANGE ANYTHING UNDER THIS, ONLY CHANGE THE LINE "-- put your script here"!!!!!!
--- DO NOT CHANGE ANYTHING UNDER THIS, ONLY CHANGE THE LINE "-- put your script here"!!!!!!
-local MT = getmetatable(KeyGuardian.Checks);
-local A, B, C = KeyGuardian.Checks.EQ(Key);
+        local notifi = "[Invalid key]"
 
-if KeyGuardian:ValidateKey(Key) then
-    if
-        not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG1"]["NUM"]) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG1"]["NUM"]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG2"]["NUM"]) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG2"]["NUM"]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["os.time()"]()) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["os.time()"]()))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["tick"]()) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["os.time()"]()))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Premium"]["Value"]) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Premium"]["Value"]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Premium"]["NotPremium"]) ~= true)
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["SHA256"]["Decoded"]) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["SHA256"]["Decoded"]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["SHA256"]["Encoded"]()) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["SHA256"]["Encoded"]()))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"]) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"]()) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"]()))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"].__metatable) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"][1]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"] / (5 * math.pi)) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Done"][6]))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG2"] * 4) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG1"] ^ 8))
-        and not ((getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG1"] / 81) ~= (getfenv(KeyGuardian.Sanity)["KeyGuardian"]["math.random"]["RNG2"] * 8))
-    then
-        print("KeyGuardian validated [1]")
+        local message = string.format("\nPremium Announcement\n %s", notifi)
 
-        if 
-            A 
-            and B 
-            and C 
-            and MT == getmetatable(KeyGuardian.Checks) 
-            and A[-1] == B[-1] / 9 
-            and A[1] == B[1] * 8 
-            and C[-42] == getmetatable(getmetatable(A)) 
-            and (78 * 9 * 54 * 32 + 123 + 21) ^ 3 * 32 == A[-1]
-            and #C > math.sqrt(#B) + math.sin(#A)
-            and (A[2] % 5 == 0)
-            and C[math.ceil(math.pi * 10)] == "KeyGuardian"
-            and MT.__call ~= nil
-            and type(A[3] + B[3]) == "number"
-            and (A[#A] - B[#C] * 7) % 13 == 4
-            and B[math.random(1, #A)] % 78 * math.sqrt(5 + math.sqrt(#C)) * 100 == C[math.random(1, #B)]
-            and MT.__index == KeyGuardian.Method
-            and #C < #A
-            and typeof(C[math.random(-50, 50)]) == "string"
-            and math.abs(A[-89] - B[64]) < 5000
-            and C - 100 == B
-            and A - 100 == B
-            and A[tostring(#C)] == "unexpected_value"
-            and A ^ 7 == C ^ 9
-            and A / (#C ^ 87 * (#C % 576)) == B / ((#A - 765 / (#C ^ 4)) ^ 9)
-            and A[-2] ^ 3 == B[-2] + C[-2] * 5
-            and C[math.floor(#C / 3)] == "SanityCheck"
-            and C < C
-            and C / A == B
-            and A / (((B[math.random(1, #A * 7)] ^ 3 ) % 3 * 5) ^ 8) == C ^ (math.pi * math.sin(math.pi) ^ 7 / 5)
-            and B % A == C[math.random(1, math.random(1, math.log(3))) % 3]
-            and A[math.random(#C, #C * (math.abs(-3) - math.cos(4) * 50))] == C[math.random(1, #A)]
-            and (B[#B % 2] + (A[#A] / 3)) == B
-            and (B[#B % 65] + (A[#A] / (542  * math.pi))) == getmetatable(B)
-            and (B[#B % 122] + (A[#A] / 762)) ~= B
-            and (B[#B % 432] + (A[#A] / (268 * math.pi))) ~= getmetatable(B)
-            and getmetatable(B[math.random(1, #A)]) == getmetatable(getfenv(KeyGuardian.Sanity)["KeyGuardian"]["Premium"])
-            and getmetatable(KeyGuardian) == getmetatable(nil)
-            and #B == #A
-            and #C > #B
-            and #A > #C
-            and #B > #C        
-            and A .. "KeyGuardian" == B
-            and A + (math.random(-1, 100)) == C - (math.random(-1, 100))
-            and type(A) == "table"
-            and type(B) == "table"
-            and type(C) == "table"
-            and not pcall(function() return (A[-1]) end)
-        then
-            local Mode = KeyGuardian["Result"]["Mode"];
-            print("KeyGuardian validated [2]");
-            if KeyGuardian["Result"] 
-            and Mode == "Premium"
-            or Mode == "Default"
-            and KeyGuardian["Result"]["Key"] == Key
-            and KeyGuardian["Result"]["Key"] ~= Key
-            and Mode ~= KeyGuardian["Result"]["Mode"]
-            then
-                Check = function(Value, Table)
-                    for i, v in next, Table do
-                        if type(v) == "table" then
-                            if Check(Value, v) then
-                                return true
-                            end
-                        else
-                            if Value == v then
-                                return true
-                            end
-                        end
-                    end
-                    return false
-                end
-                if Check(KeyGuardian["Result"]["Key"], KeyGuardian["Result"])
-                or Check(KeyGuardian["Result"]["Mode"], KeyGuardian["Result"])
-                and not KeyGuardian["Validated"]
-                then
-                    return print("KeyGuardian not validated [3]"); -- crash
-                else
-                    print("Whitelisted, Version: " .. (Mode))
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
-                end
-            end
-        else
-            return print("KeyGuardian not validated [2]"); -- crash
-        end;
-    else    
-        return print("KeyGuardian not validated [1]"); -- crash
-    end;
-else
-    print("Key invalid or not found or hwid mismatch!")
-end;
+        player:Kick(message)
+    end
+end
+
+--print("Hiển thị GUI Key System...")
+
+--local ScreenGui = Instance.new("ScreenGui")
+--ScreenGui.Parent = player:WaitForChild("PlayerGui")
+
+--local Frame = Instance.new("Frame")
+--Frame.Size = UDim2.new(0, 400, 0, 300)
+--Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+--Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+--Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+--Frame.BorderSizePixel = 0
+--Frame.Active = true
+--Frame.Draggable = true
+--Frame.Parent = ScreenGui
+
+--local FrameCorner = Instance.new("UICorner")
+--FrameCorner.CornerRadius = UDim.new(0, 10)
+--FrameCorner.Parent = Frame
+
+--local Close = Instance.new("TextButton")
+--Close.Size = UDim2.new(0, 40, 0, 40)
+--Close.Position = UDim2.new(1, -40, 0, 0)
+--Close.BackgroundTransparency = 1
+--Close.Text = "×"
+--Close.TextScaled = true
+--Close.TextColor3 = Color3.fromRGB(150, 150, 150)
+--Close.Parent = Frame
+--Close.MouseButton1Click:Connect(function()
+    --ScreenGui.Enabled = false
+--end)
+
+--local Title = Instance.new("TextLabel")
+--Title.Size = UDim2.new(1, 0, 0, 30)
+--Title.Position = UDim2.new(0, 0, 0.05, 0)
+--Title.Text = "Dino Key System🔑"
+--Title.TextSize = 18
+--Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+--Title.BackgroundTransparency = 1
+--Title.Parent = Frame
+
+--local TextBox = Instance.new("TextBox")
+--TextBox.Size = UDim2.new(0.8, 0, 0.2, 0)
+--TextBox.Position = UDim2.new(0.1, 0, 0.4, 0)
+--TextBox.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+--TextBox.PlaceholderText = "Enter Key..."
+--TextBox.Text = ""
+--TextBox.TextSize = 18
+--TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+--TextBox.Parent = Frame
+
+--local TextBoxCorner = Instance.new("UICorner")
+--TextBoxCorner.CornerRadius = UDim.new(0, 5)
+--TextBoxCorner.Parent = TextBox
+
+--local GetKey = Instance.new("TextButton")
+--GetKey.Size = UDim2.new(0.35, 0, 0.15, 0)
+--GetKey.Position = UDim2.new(0.1, 0, 0.7, 0)
+--GetKey.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+--GetKey.Text = "Get Key"
+--GetKey.TextSize = 18
+--GetKey.TextColor3 = Color3.fromRGB(150, 150, 150)
+--GetKey.Parent = Frame
+
+--local GetKeyCorner = Instance.new("UICorner")
+--GetKeyCorner.CornerRadius = UDim.new(0, 5)
+--GetKeyCorner.Parent = GetKey
+
+--local CheckKey = Instance.new("TextButton")
+--CheckKey.Size = UDim2.new(0.35, 0, 0.15, 0)
+--CheckKey.Position = UDim2.new(0.55, 0, 0.7, 0)
+--CheckKey.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+--CheckKey.Text = "Check Key"
+--CheckKey.TextSize = 18
+--CheckKey.TextColor3 = Color3.fromRGB(150, 150, 150)
+--CheckKey.Parent = Frame
+
+--local CheckKeyCorner = Instance.new("UICorner")
+--CheckKeyCorner.CornerRadius = UDim.new(0, 5)
+--CheckKeyCorner.Parent = CheckKey
+
+--GetKey.MouseButton1Click:Connect(function()
+    --setclipboard("https://lootdest.org/s?VFcUlcm4")
+    --GetKey.Text = "Copied!"
+    --wait(1)
+    --GetKey.Text = "Get Key"
+--end)
+
+--CheckKey.MouseButton1Click:Connect(function()
+    --local enteredKey = TextBox.Text
+    --if isFreemiumKey(enteredKey) then
+        --_G.key = enteredKey
+        --TextBox.PlaceholderText = "Correct Freemium Key!"
+        --ScreenGui.Enabled = false
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/freemium.lua"))()
+    --else
+        --TextBox.PlaceholderText = "Invalid key. Try again."
+    --end
+--end)
