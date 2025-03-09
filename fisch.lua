@@ -65,7 +65,7 @@ end
 function UI.Initialize()
     --UI
 
-    local Windows = NEVERLOSE:AddWindow("Ronix Hub","🌟Ronix Hub - Fisch - V0.1.8 - discord.gg/ronix🌟")
+    local Windows = NEVERLOSE:AddWindow("Dino Hub","🌟Dino Hub - Fisch - V0.1 - discord.gg/67tG8nmaQX🌟")
 
     local FishingTab = Windows:AddTab("Fishing", "earth")
 
@@ -316,7 +316,7 @@ local WaitForSomeone = RenderStepped.Wait
 
 Convenience:AddButton("Protect Identity", function()
 
-    getgenv().name = "discord.gg/ronix on top"
+    getgenv().name = "discord.gg/67tG8nmaQX on top"
     local Plr = game.Players.LocalPlayer
     for Index, Value in next, game:GetDescendants() do 
         if Value.ClassName == "TextLabel" then 
@@ -1366,11 +1366,11 @@ end)
 		end)
 	end)
 
-    CreditsSection:AddLabel("Fisch Ronix Hub Script by dynamicarrays, bdokkx")
+    CreditsSection:AddLabel("Fisch Dino Hub Script by _.tis")
     CreditsSection:AddButton(
         "Copy Discord Link",
         function()
-            setclipboard("discord.gg/ronix")
+            setclipboard("discord.gg/67tG8nmaQX")
             Notification:Notify("Copied","Copied","Copied discord link to clipboard",4)
         end
     )
