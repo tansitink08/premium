@@ -1564,7 +1564,7 @@ print("--[[Loaded UI]]--")
 Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Dino Hub [Freemium]",
-    SubTitle = "keyless will expire on March 11, 2025 GMT +7",
+    SubTitle = "discord.gg/67tG8nmaQX",
     TabWidth = 160,
     Size = UDim2.fromOffset(500, 320),
     Acrylic = false, 
@@ -8356,7 +8356,7 @@ local playerId = player.UserId
 local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
 
 local data = {
-    ["content"] = "**Blox Fruits Freemium Script...!**",
+    ["content"] = "**Blox Fruits Premium Script...!**",
     ["embeds"] = {
         {
             ["title"] = "Thông Tin Người Chơi",
