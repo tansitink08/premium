@@ -4,6 +4,7 @@ local premiumKeys = {
     "vantan08", 
     "barongo911_Dino", 
     "dino_takomonika",
+    "phongsech_dino",
 }
 
 local freemiumKeys = {
