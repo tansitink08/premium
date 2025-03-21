@@ -1561,7 +1561,7 @@ function AttackNoCoolDown()
     end
 end
 print("--[[Loaded UI]]--")
-Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
+Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/FixedFluent.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Dino Hub [Premium]",
     SubTitle = "discord.gg/67tG8nmaQX",
