@@ -1,63 +1,29 @@
-local KeyGuardLibrary = loadstring(game:HttpGet("https://cdn.keyguardian.org/library/v1.0.0.lua"))()
-local trueData = "91c8b1fa80fb493cb4da8cc40f59981e"
-local falseData = "39239ca21fde45adaf34757db8115070"
+local Window = library:Window("Switch",[[Hub]],[[Version : Leak  ]],"100644623613900",Enum.KeyCode.RightControl)
+      local General_Tab = Window:AddTab("General",[[7040391851]])
+     local Quest_Tab = Window:AddTab("Quest & Item",[[9606626859]])
 
-KeyGuardLibrary.Set({
-	publicToken = "733c2e65bf42405da92788692aa61473",
-	privateToken = "78dc3c12fcfe4e89bac5bc1221ef1bbb",
-	trueData = trueData,
-	falseData = falseData,
-})
+    General_Tab:Label("Label Tile")
+  
+   General_Tab:Toggle("Toggle","9606294253",false,function()
+  end)
 
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local key = ""
-
-local Window = Fluent:CreateWindow({
-		Title = "Key System",
-		SubTitle = "Dino Hub",
-		TabWidth = 160,
-		Size = UDim2.fromOffset(580, 340),
-		Acrylic = false,
-		Theme = "Dark",
-		MinimizeKey = Enum.KeyCode.LeftControl
-})
-
-local Tabs = {
-		KeySys = Window:AddTab({ Title = "Key System", Icon = "key" }),
+   General_Tab:Button("Button",function()
+   end)
+   
+   AutoSet = {
+    "Set 1",
+    "Set 2",
+    "Set 3",
+    "Set 4"
 }
-
-local Entkey = Tabs.KeySys:AddInput("Input", {
-		Title = "Enter Key",
-		Description = "Enter Key Here",
-		Default = "",
-		Placeholder = "Enter key…",
-		Numeric = false,
-		Finished = false,
-		Callback = function(Value)
-				key = Value
-		end
-})
-
-local Checkkey = Tabs.KeySys:AddButton({
-		Title = "Check Key",
-		Description = "Enter Key before pressing this button",
-		Callback = function()
-				local response = KeyGuardLibrary.validateDefaultKey(key)
-				if response == trueData then
-						print("Key is valid")
-						loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua")()
-				else
-						print("Key is invalid")
-				end
-		end
-})
-
-local Getkey = Tabs.KeySys:AddButton({
-		Title = "Get Key",
-		Description = "Get Key here",
-		Callback = function()
-				setclipboard(KeyGuardLibrary.getLink())
-		end
-})
-
-Window:SelectTab(1)
+General_Tab:Dropdown("Dropdown Test",AutoSet,function()
+end)
+    
+    local Tessss = General_Tab:LabelP("Check")
+    Tessss:Set("Test")
+    
+General_Tab:Slider("Slider",1,100,60,function()
+end)    
+    
+  General_Tab:Textbox("TextBox",function()  
+  end)
