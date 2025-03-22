@@ -638,7 +638,72 @@ local Window = library:Window("Dino",[[Hub]],[[Version : Test  ]],"9943041778802
     General_Tab:Label("Main Farm")
   
    General_Tab:Toggle("Auto Farm Level","9606294253",false,function()
-  end)
+spawn(function()
+    local canRun = true
+    local debounceTime = 0.5
+    while wait(debounceTime) do
+        if getgenv().AutoFarm and FarmMode == "Farm Level" then
+            if canRun then
+                canRun = false
+                spawn(function()
+                    local player = game:GetService("Players").LocalPlayer
+                    local questTitle = player.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                    local questVisible = player.PlayerGui.Main.Quest.Visible
+                    local humanoidRoot = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+                    if not string.find(questTitle, NameMon) then
+                        getgenv().StartMagnet = false
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                    end
+                    if not questVisible then
+                        getgenv().StartMagnet = false
+                        CheckQuest()
+                        if BypassTP then
+                            local distance = (humanoidRoot.Position - CFrameQuest.Position).Magnitude
+                            if distance > 1500 then
+                                BTP(CFrameQuest * CFrame.new(0, 20, 5))
+                            elseif distance < 1500 then
+                                topos(CFrameQuest)
+                            end
+                        else
+                            topos(CFrameQuest)
+                        end
+                        if (humanoidRoot.Position - CFrameQuest.Position).Magnitude <= 20 then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
+                        end
+                    elseif questVisible then
+                        CheckQuest()
+                        local enemies = game:GetService("Workspace").Enemies:GetChildren()
+                        for _, v in pairs(enemies) do
+                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") then
+                                if v.Humanoid.Health > 0 and v.Name == Mon then
+                                    if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+                                        repeat
+                                            task.wait(0.1)
+                                            AutoHaki()
+                                            EquipWeapon(getgenv().SelectWeapon)
+                                            PosMon = v.HumanoidRootPart.CFrame
+                                            topos(v.HumanoidRootPart.CFrame * Pos)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.Head.CanCollide = false
+                                            getgenv().StartMagnet = true
+                                            sethiddenproperty(player, "SimulationRadius", math.huge)
+                                        until not getgenv().AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible
+                                    else
+                                        getgenv().StartMagnet = false
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)
+                task.wait(0.5)
+                canRun = true
+            end
+        end
+    end
+end)
 
    General_Tab:Button("Button",function()
    end)
