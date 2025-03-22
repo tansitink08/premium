@@ -1,5 +1,5 @@
 DinoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/fixedui.lua"))()
-local Window = library:Window("Dino",[[Hub]],[[Version : Test  ]],"100644623613900",Enum.KeyCode.RightControl)
+local Window = library:Window("Dino",[[Hub]],[[Version : Test  ]],"99430417788026",Enum.KeyCode.RightControl)
       local General_Tab = Window:AddTab("General",[[7040391851]])
      local Quest_Tab = Window:AddTab("Quest & Item",[[9606626859]])
 
