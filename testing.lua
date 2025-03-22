@@ -3,9 +3,9 @@ local Window = library:Window("Dino",[[Hub]],[[Version : Test  ]],"9943041778802
       local General_Tab = Window:AddTab("General",[[7040391851]])
      local Quest_Tab = Window:AddTab("Quest & Item",[[9606626859]])
 
-    General_Tab:Label("Label Tile")
+    General_Tab:Label("Main Farm")
   
-   General_Tab:Toggle("Toggle","9606294253",false,function()
+   General_Tab:Toggle("Auto Farm Level","9606294253",false,function()
   end)
 
    General_Tab:Button("Button",function()
