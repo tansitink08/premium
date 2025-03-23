@@ -36,7 +36,8 @@ if _G.key then
         print("Key Premium hợp lệ! Đang tải Premium script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
-   -- else
+    else
+    print("sai key")
    --     local player = game.Players.LocalPlayer 
 
     --    local notifi = "[Invalid key]"
