@@ -13,14 +13,14 @@ local freemiumKeys = {
     "dsah84578**",
 }
 
---local function isPremiumKey(inputKey)
-    --for _, key in ipairs(premiumKeys) do
-       -- if inputKey == key then
-          --  return true
-     --   end
-  --  end
-  --  return false
---end
+local function isPremiumKey(inputKey)
+    for _, key in ipairs(premiumKeys) do
+        if inputKey == key then
+            return true
+        end
+    end
+    return false
+end
 
 local function isFreemiumKey(inputKey)
     for _, key in ipairs(freemiumKeys) do
@@ -37,18 +37,16 @@ if _G.key then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
     else
-    print("sai key")
-   --     local player = game.Players.LocalPlayer 
+        local player = game.Players.LocalPlayer 
 
-    --    local notifi = "[Invalid key]"
+        local notifi = "[Invalid key]"
 
-    --    local message = string.format("\nPremium Announcement\n %s", notifi)
+        local message = string.format("\nPremium Announcement\n %s", notifi)
 
-    --    player:Kick(message)
+        player:Kick(message)
     end
 end
 
-print("Hiển thị GUI Key System...")
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = player:WaitForChild("PlayerGui")
