@@ -8269,7 +8269,7 @@ Input = PVP:AddInput("Input", {
          getgenv().WalkSpeed = Value
      end
 })
-kaitan = Window:AddTab({ Title = "One Click", Icon = "" })
+kaitan = Window:AddTab({ Title = "Tab One Click", Icon = "" })
 kaitan:AddButton({
     Title = "One Click",
     Callback = function()
