@@ -5,7 +5,8 @@ local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_ = Remotes:WaitForChild("CommF_")
 
 local player = Players.LocalPlayer
-if player then
+
+if player and not player.Team then
     CommF_:InvokeServer("SetTeam", "Marines")
 end
 
