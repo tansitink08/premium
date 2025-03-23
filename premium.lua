@@ -1,3 +1,7 @@
+if not rawget(_G, "team") or _G.team == "" then
+    _G.team = "Marines"
+end
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
@@ -5,8 +9,9 @@ local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_ = Remotes:WaitForChild("CommF_")
 
 local player = Players.LocalPlayer
-if player then
-    CommF_:InvokeServer("SetTeam", "Marines")
+
+if player and not player.Team then
+    CommF_:InvokeServer("SetTeam", _G.team)
 end
 
 shared.LoaderTitle = "Loading Premium Script....!";
@@ -1561,7 +1566,9 @@ function AttackNoCoolDown()
     end
 end
 print("--[[Loaded UI]]--")
-Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/FixedFluent.lua"))())
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Dino Hub [Premium]",
     SubTitle = "discord.gg/67tG8nmaQX",
@@ -8266,6 +8273,13 @@ Input = PVP:AddInput("Input", {
      Callback = function(Value)
          getgenv().WalkSpeed = Value
      end
+})
+kaitan = Window:AddTab({ Title = "Tab One Click", Icon = "" })
+kaitan:AddButton({
+    Title = "One Click",
+    Callback = function()
+    loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
+    end
 })
 ----------------------------------------------------------------------------------------------------
 print("--[[ImageButton]]--")
