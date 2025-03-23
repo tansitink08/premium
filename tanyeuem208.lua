@@ -13,14 +13,14 @@ local freemiumKeys = {
     "dsah84578**",
 }
 
-local function isPremiumKey(inputKey)
-    for _, key in ipairs(premiumKeys) do
-        if inputKey == key then
-            return true
-        end
-    end
-    return false
-end
+--local function isPremiumKey(inputKey)
+    --for _, key in ipairs(premiumKeys) do
+       -- if inputKey == key then
+          --  return true
+     --   end
+  --  end
+  --  return false
+--end
 
 local function isFreemiumKey(inputKey)
     for _, key in ipairs(freemiumKeys) do
