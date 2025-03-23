@@ -8271,7 +8271,7 @@ Input = PVP:AddInput("Input", {
 })
 kaitan = Window:AddTab({ Title = "One Click", Icon = "" })
 kaitan:AddButton({
-    Title = "One Click Lv.1 to Lv.max",
+    Title = "One Click",
     Callback = function()
     loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
     end
