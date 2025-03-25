@@ -8,7 +8,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "robloxistrash9999", 
+    "ytb:candyy", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
