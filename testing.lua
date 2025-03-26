@@ -9,7 +9,7 @@ local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"994304177
    loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
    end)
 
-   General_Tab:Toggle("Toggle","9606294253",false,function()
+   General_Tab:Toggle("White screen","9606294253",false,function()
   end)
 
    General_Tab:Toggle("Boost FPS","9606294253",false,function()
