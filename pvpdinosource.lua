@@ -1,3 +1,19 @@
+if not rawget(_G, "team") or _G.team == "" then
+    _G.team = "Marines"
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local Remotes = ReplicatedStorage:WaitForChild("Remotes")
+local CommF_ = Remotes:WaitForChild("CommF_")
+
+local player = Players.LocalPlayer
+
+if player and not player.Team then
+    CommF_:InvokeServer("SetTeam", _G.team)
+end
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
