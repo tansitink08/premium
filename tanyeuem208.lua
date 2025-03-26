@@ -31,22 +31,29 @@ local function isFreemiumKey(inputKey)
     return false
 end
 
+if _G.mode == "PvP" then
+    if not _G.key or _G.key == "" then
+        local notifi = "Premium Only | _G.key = \"put ur key\""
+        local message = string.format("\nPremium Announcement\n %s", notifi)
+        player:Kick(message)
+    else
+        print("PvP mode detected! Loading PvP script...")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))() -- Thay "xxxx" bằng link script PvP của bạn
+    end
+    return 
+end  
+
 if _G.key then
     if isPremiumKey(_G.key) then
         print("Key Premium hợp lệ! Đang tải Premium script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
     else
-        local player = game.Players.LocalPlayer 
-
         local notifi = "[Invalid key]"
-
         local message = string.format("\nPremium Announcement\n %s", notifi)
-
         player:Kick(message)
     end
 end
-
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = player:WaitForChild("PlayerGui")
