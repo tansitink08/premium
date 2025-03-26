@@ -42,7 +42,7 @@ if _G.mode == "PvP" then
         player:Kick(message)
     else
         print("PvP mode detected! Loading PvP script...")
-        loadstring(game:HttpGet("xxxx"))() -- Thay "xxxx" bằng link script PvP của bạn
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))() -- Thay "xxxx" bằng link script PvP của bạn
     end
     return -- Dừng script ngay sau khi xử lý PvP mode
 end  
