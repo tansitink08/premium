@@ -1,3 +1,19 @@
+if not rawget(_G, "team") or _G.team == "" then
+    _G.team = "Marines"
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local Remotes = ReplicatedStorage:WaitForChild("Remotes")
+local CommF_ = Remotes:WaitForChild("CommF_")
+
+local player = Players.LocalPlayer
+
+if player and not player.Team then
+    CommF_:InvokeServer("SetTeam", _G.team)
+end
+
  local dino = loadstring(game:HttpGet"https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/fixedui.lua")()
 local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"99430417788026",Enum.KeyCode.RightControl)
       local General_Tab = Window:AddTab("General",[[7040391851]])
