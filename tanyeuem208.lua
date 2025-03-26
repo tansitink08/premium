@@ -8,7 +8,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "ytb:candyy", 
+    "candyy:ytb20211412", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
