@@ -9,30 +9,26 @@ local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"994304177
    loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
    end)
   
-   General_Tab:Toggle("Black screen","9606294253",false,function()
-	getgenv().StartBlackScreen = Value
+General_Tab:Toggle("Black screen", "9606294253", false, function(state)
+    getgenv().StartBlackScreen = state
 end)
+
 local lastUpdateTime = 0
 local updateCooldown = 0.5
-spawn(function()
-    while task.wait() do
-        if tick() - lastUpdateTime >= updateCooldown then
-            lastUpdateTime = tick()
-            if getgenv().StartBlackScreen then
-                game:GetService("Players").LocalPlayer.PlayerGui.Main.Blackscreen.Size = UDim2.new(500, 0, 500, 500)
-            else
-                game:GetService("Players").LocalPlayer.PlayerGui.Main.Blackscreen.Size = UDim2.new(1, 0, 500, 500)
-            end
+
+RunService.RenderStepped:Connect(function()
+    if tick() - lastUpdateTime >= updateCooldown then
+        lastUpdateTime = tick()
+        local blackScreen = LocalPlayer.PlayerGui:FindFirstChild("Main") and LocalPlayer.PlayerGui.Main:FindFirstChild("Blackscreen")
+        if blackScreen then
+            blackScreen.Size = getgenv().StartBlackScreen and UDim2.new(1, 0, 1, 0) or UDim2.new(0, 0, 0, 0)
         end
     end
 end)
 
- General_Tab:Toggle("White screen","9606294253",false,function()
-    getgenv().WhiteScreen = Value
-    if getgenv().WhiteScreen == true then
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-    elseif getgenv().WhiteScreen == false then
-        game:GetService("RunService"):Set3dRenderingEnabled(true)
-    end
+General_Tab:Toggle("White screen", "9606294253", false, function(state)
+    getgenv().WhiteScreen = state
+    RunService:Set3dRenderingEnabled(not state)
 end)
+
 
