@@ -31,6 +31,17 @@ local function isFreemiumKey(inputKey)
     return false
 end
 
+if _G.mode == "OneClick" then
+    if not _G.key or _G.key == "" or not isPremiumKey(_G.key) then
+        local notifi = "Premium Only | _G.key = \"put ur key\""
+        local message = string.format("\nPremium Announcement\n %s", notifi)
+        player:Kick(message)
+    else
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/oneclickBF.lua")()
+    end
+    return 
+end
+
 if _G.mode == "PvP" then
     if not _G.key or _G.key == "" or not isPremiumKey(_G.key) then
         local notifi = "Premium Only | _G.key = \"put ur key\""
