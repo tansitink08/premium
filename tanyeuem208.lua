@@ -32,16 +32,17 @@ local function isFreemiumKey(inputKey)
 end
 
 if _G.mode == "PvP" then
-    if not _G.key or _G.key == "" then
+    if not _G.key or _G.key == "" or not isPremiumKey(_G.key) then
         local notifi = "Premium Only | _G.key = \"put ur key\""
         local message = string.format("\nPremium Announcement\n %s", notifi)
         player:Kick(message)
     else
         print("PvP mode detected! Loading PvP script...")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))() -- Thay "xxxx" bằng link script PvP của bạn
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))()
     end
     return 
 end  
+  
 
 if _G.key then
     if isPremiumKey(_G.key) then
