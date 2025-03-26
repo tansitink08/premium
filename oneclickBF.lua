@@ -30,3 +30,28 @@ local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"994304177
 
    General_Tab:Toggle("Boost FPS","9606294253",false,function()
   end)
+
+local player = game.Players.LocalPlayer
+local playerName = player.Name
+local playerId = player.UserId
+local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
+
+local data = {
+    ["content"] = "**Blox Fruits Premium OneClick Script...!**",
+    ["embeds"] = {
+        {
+            ["title"] = "Thông Tin Người Chơi",
+            ["description"] = "Tên người chơi: **" .. playerName .. "**\nUserId: **" .. playerId .. "**",
+            ["color"] = 3447003
+        }
+    }
+}
+
+local jsonData = game:GetService("HttpService"):JSONEncode(data)
+
+local response = http_request({
+    Url = webhookURL,
+    Method = "POST",
+    Headers = { ["Content-Type"] = "application/json" },
+    Body = jsonData
+})
