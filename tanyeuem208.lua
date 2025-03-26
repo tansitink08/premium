@@ -37,7 +37,6 @@ if _G.mode == "PvP" then
         local message = string.format("\nPremium Announcement\n %s", notifi)
         player:Kick(message)
     else
-        print("PvP mode detected! Loading PvP script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))()
     end
     return 
@@ -46,7 +45,6 @@ end
 
 if _G.key then
     if isPremiumKey(_G.key) then
-        print("Key Premium hợp lệ! Đang tải Premium script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/premium.lua"))()
         return
     else
