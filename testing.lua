@@ -10,7 +10,6 @@ local Window = library:Window("Dino",[[Hub]],[[Version : OneClick  ]],"994304177
    end)
   
    General_Tab:Toggle("Black screen","9606294253",false,function()
-   Toggle:OnChanged(function(Value)
 	getgenv().StartBlackScreen = Value
 end)
 local lastUpdateTime = 0
@@ -29,7 +28,6 @@ spawn(function()
 end)
 
  General_Tab:Toggle("White screen","9606294253",false,function()
- Toggle:OnChanged(function(Value)
     getgenv().WhiteScreen = Value
     if getgenv().WhiteScreen == true then
         game:GetService("RunService"):Set3dRenderingEnabled(false)
