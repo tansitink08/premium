@@ -37,7 +37,7 @@ end
 -- Kiểm tra chế độ PvP
 if _G.mode == "PvP" then
     if not _G.key or _G.key == "" then
-        local notifi = "_G.key = \"put ur key\""
+        local notifi = "Premium Only | _G.key = \"put ur key\""
         local message = string.format("\nPremium Announcement\n %s", notifi)
         player:Kick(message)
     else
