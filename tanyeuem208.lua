@@ -5,6 +5,7 @@ local premiumKeys = {
     "barongo911_Dino", 
     "dino_takomonika",
     "phongsech_dino",
+    "brainrot_dino",
 }
 
 local freemiumKeys = {
