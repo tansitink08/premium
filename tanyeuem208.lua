@@ -9,7 +9,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "candyy:ytb20211412", 
+    "candyy:submychannel208", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
