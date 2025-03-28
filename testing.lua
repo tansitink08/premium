@@ -165,7 +165,7 @@ v5.Window = function(v134, v135)
 	v170.BackgroundTransparency = 1.1;
 	v170.Position = UDim2.new(0.405426834, 0, 0.075000003, 0);
 	v170.Size = UDim2.new(0, 263, 0, 325);
-	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(99430417788026) ;
+	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(--nil) ;
 	local v178 = Instance.new("UICorner");
 	v178.Name = "MCNR";
 	v178.Parent = v147;
@@ -3032,7 +3032,7 @@ local v79 = v66:T("Tab Miscellaneous", "rbxassetid://10709782582");
 v67:Seperator("Join Discord");
 v67:Label("Everyone Goes Into Socialize");
 v67:Button("Copy Discord Link", function()
-	setclipboard("https://https://discord.gg/gRn2S6m4YS");
+	setclipboard("https://discord.gg/67tG8nmaQX");
 end);
 v67:Seperator("Time");
 Time = v67:Label("Executer Time");
