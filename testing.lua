@@ -1,6 +1,6 @@
 print("Break");
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
-v0.new("<Color=Cyan>Welcome to Tuấn Anh IOS<Color=/>"):Display();
+v0.new("<Color=Cyan>Welcome to Dino Hub<Color=/>"):Display();
 wait(0.5);
 v0.new("<Color=Yellow>Everyone Goes to Discord to Communicate<Color=/>"):Display();
 wait(1);
@@ -165,7 +165,7 @@ v5.Window = function(v134, v135)
 	v170.BackgroundTransparency = 1.1;
 	v170.Position = UDim2.new(0.405426834, 0, 0.075000003, 0);
 	v170.Size = UDim2.new(0, 263, 0, 325);
-	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(75774010417827) ;
+	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(99430417788026) ;
 	local v178 = Instance.new("UICorner");
 	v178.Name = "MCNR";
 	v178.Parent = v147;
@@ -193,7 +193,7 @@ v5.Window = function(v134, v135)
 	v197.Position = UDim2.new(0, 30, 0.05, 0);
 	v197.Size = UDim2.new(0, 255, 0.05, 25);
 	v197.Font = Enum.Font.SourceSansBold;
-	v197.Text = "Tuấn Anh IOS";
+	v197.Text = "Dino Hub [Premium]";
 	v197.TextSize = 17;
 	v197.TextColor3 = Color3.fromRGB(0, 134, 139);
 	v197.TextXAlignment = Enum.TextXAlignment.Left;
@@ -11959,9 +11959,9 @@ v79:Button("Change Buso Haki State", function()
 end);
 local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Tuấn Anh IOS",
+	Title = "Dino Hub",
 	Text = "Loading...",
-	Icon = "rbxthumb://type=Asset&id=75774010417827&w=150&h=150",
+	Icon = "rbxthumb://type=Asset&id=99430417788026&w=150&h=150",
 	Duration = 10
 });
 spawn(function()
