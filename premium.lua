@@ -1826,7 +1826,20 @@ function CheckQuest()
 			NameMon = "Isle Champion";
 			CFrameQuest = CFrame.new( -16540, 56, 1051);
 			CFrameMon = CFrame.new( -16634, 85, 1106);
-		end
+                elseif MyLevel >= 2550 and MyLevel <= 2574 then
+                        Mon = "Serpent Hunter"
+                        LevelQuest = 1
+                        NameQuest = "TikiQuest3"
+                        NameMon = "Serpent Hunter"
+                        CFrameQuest = CFrame.new(-16665.1914, 104.596405, 1579.69434, 0.951068401, -0, -0.308980465, 0, 1, -0, 0.308980465, 0, 0.951068401)
+                        CFrameMon = CFrame.new(-16521.0625, 106.09285, 1488.78467, 0.469467044, 0, 0.882950008, 0, 1, 0, -0.882950008, 0, 0.469467044)
+                        elseif MyLevel >= 2575 then
+                        Mon = "Skull Slayer"
+                        LevelQuest = 2
+                        NameQuest = "TikiQuest3"
+                        NameMon = "Skull Slayer"
+                        CFrameQuest = CFrame.new(-16665.1914, 104.596405, 1579.69434, 0.951068401, -0, -0.308980465, 0, 1, -0, 0.308980465, 0, 0.951068401)
+                        CFrameMon = CFrame.new(-16855.043, 122.457253, 1478.15308, -0.999392271, 0, -0.0348687991, 0, 1, 0, 0.0348687991, 0, -0.999392271)
 	end
 end
 function Hop()
