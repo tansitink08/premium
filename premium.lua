@@ -8383,3 +8383,11 @@ local response = http_request({
     Body = jsonData
 })
 
+SaveManager:Initialize({
+    Folder = "Workspace"  -- Tạo một thư mục lưu dữ liệu
+})
+
+-- Sử dụng InterfaceManager để quản lý giao diện (nếu cần)
+InterfaceManager:Manage({
+    Window = Window  -- Quản lý cửa sổ trong giao diện
+})
