@@ -10,7 +10,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "suckmysikibidi", 
+    "concac69**", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
