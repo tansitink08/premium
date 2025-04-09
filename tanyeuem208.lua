@@ -10,7 +10,7 @@ local premiumKeys = {
 }
 
 local freemiumKeys = {
-    "concac69**", 
+    "500subpls|ytb:candyy", 
     "dsjauiytwdsa", 
     "dsah84578**",
 }
