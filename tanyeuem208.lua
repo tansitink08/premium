@@ -6,7 +6,8 @@ local premiumKeys = {
     "dino_takomonika",
     "phongsech_dino",
     "brainrot_dino",
-    "yeuemnhat_dino"
+    "yeuemnhat_dino",
+    "DINO-PJI64-F518-20Q0-V4I24-880K8"
 }
 
 local freemiumKeys = {
