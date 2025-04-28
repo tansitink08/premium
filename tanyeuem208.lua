@@ -61,7 +61,7 @@ if _G.mode == "Maru" then
         local message = string.format("\nPremium Announcement\n %s", notifi)
         player:Kick(message)
     else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/paid.lua"))()
     end
     return 
 end  
