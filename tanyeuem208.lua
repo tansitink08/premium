@@ -53,6 +53,17 @@ if _G.mode == "PvP" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))()
     end
     return 
+end
+
+if _G.mode == "Maru" then
+    if not _G.key or _G.key == "" or not isPremiumKey(_G.key) then
+        local notifi = "Premium Only | _G.key = \"put ur key\""
+        local message = string.format("\nPremium Announcement\n %s", notifi)
+        player:Kick(message)
+    else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xvtan22/premium/refs/heads/main/dinopvp.lua"))()
+    end
+    return 
 end  
   
 
