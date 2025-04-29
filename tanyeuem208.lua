@@ -7,7 +7,7 @@ local premiumKeys = {
     "phongsech_dino",
     "brainrot_dino",
     "yeuemnhat_dino",
-    "DINO-PJI64-F518-20Q0-V4I24-880K8"
+    "DINO-PJK64-F5Z8-2020-V4I24-88PK8"
 }
 
 local freemiumKeys = {
@@ -56,13 +56,13 @@ if _G.mode == "PvP" then
     return 
 end
 
-if _G.mode == "Maru" then
+if _G.mode == "MaruMobile" then
     if not _G.key or _G.key == "" or not isPremiumKey(_G.key) then
         local notifi = "Premium Only | _G.key = \"put ur key\""
         local message = string.format("\nPremium Announcement\n %s", notifi)
         player:Kick(message)
     else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/paid.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/paidmobile.lua"))()
     end
     return 
 end  
