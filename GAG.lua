@@ -35,7 +35,7 @@ local MainTab = Window:AddTab({ Title = "Main", Icon = "" })
 local AutoSell = false
 
 MainTab:AddToggle("dupemoney", {
-    Title = "Instant Money GAG",
+    Title = "Instant Money",
     Description = "Must have 1 player in server equip Pet",
     Default = false,
     Callback = function(Value)
