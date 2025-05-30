@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Library:CreateWindow{
     Title = "Dino Hub",
-    SubTitle = "| mm2 v0.1",
+    SubTitle = "| Grow a Garden v0.1",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Resize = true,
@@ -43,7 +43,6 @@ MainTab:AddToggle("dupemoney", {
         if AutoSell then
             task.spawn(function()
                 while AutoSell do
-                    wait(1)
                     for _, v in pairs(game:GetService("Players"):GetPlayers()) do
                         if v.Name ~= game.Players.LocalPlayer.Name then
                             local Pet = v.Character and v.Character:FindFirstChildOfClass("Tool")
