@@ -40,22 +40,23 @@ MainTab:AddToggle("dupemoney", {
     Default = false,
     Callback = function(Value)
         AutoSell = Value
-        if AutoSell then
-            task.spawn(function()
-                while AutoSell do
-                    for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-                        if v.Name ~= game.Players.LocalPlayer.Name then
-                            local Pet = v.Character and v.Character:FindFirstChildOfClass("Tool")
-                            if Pet and Pet:GetAttribute("ItemType") == "Pet" then
-                                game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("SellPet_RE"):FireServer(Pet)
-                            end
-                        end
-                    end
-                end
-            end)
-        end
     end
 })
+
+task.spawn(function()
+    while true do wait()
+        if AutoSell then
+            for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+                if v.Name ~= game.Players.LocalPlayer.Name then
+                    local Pet = v.Character:FindFirstChildOfClass("Tool")
+                    if Pet and Pet:GetAttribute("ItemType") == "Pet" then
+                        game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("SellPet_RE"):FireServer(Pet)
+                    end
+                end
+            end
+        end
+    end
+end)
 
 Fluent:Notify({
     Title = "Dino Hub",
