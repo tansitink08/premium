@@ -21,6 +21,9 @@ elseif gameId == 16732694052 then
 elseif gameId == 142823291 then
     print("phat hien mm2, exec script...")
     safeLoad("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/collectcoinmm2.lua")
+elseif gameId == 126884695634066 then
+    print("phat hien gag, exec script...")
+    safeLoad("https://raw.githubusercontent.com/tansitink08/premium/refs/heads/main/collectcoinmm2.lua")
 else
     print("Jogo não reconhecido. Nenhum script foi executado.")
 end
