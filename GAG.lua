@@ -36,7 +36,7 @@ local AutoSell = false
 
 MainTab:AddToggle("dupemoney", {
     Title = "Instant Money",
-    Description = "Must have 1 player in server equip Pet",
+    Description = "Need 1 player in server hold the Pet",
     Default = false,
     Callback = function(Value)
         AutoSell = Value
