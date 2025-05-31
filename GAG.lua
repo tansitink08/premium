@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Library:CreateWindow{
     Title = "Dino Hub",
-    SubTitle = "| Grow a Garden v0.1",
+    SubTitle = "| Grow a Garden v0.2",
     TabWidth = 160,
     Size = UDim2.fromOffset(490, 390),
     Resize = true,
@@ -35,8 +35,8 @@ local MainTab = Window:AddTab({ Title = "Main", Icon = "" })
 local AutoSell = false
 
 MainTab:AddToggle("dupemoney", {
-    Title = "Instant Money",
-    Description = "Need 1 player in server hold the Pet",
+    Title = "Instant Money GAG",
+    Description = "need 1 player hold the pet",
     Default = false,
     Callback = function(Value)
         AutoSell = Value
@@ -44,13 +44,20 @@ MainTab:AddToggle("dupemoney", {
 })
 
 task.spawn(function()
-    while true do wait()
+    local event = game:GetService("ReplicatedStorage")
+        :WaitForChild("GameEvents")
+        :WaitForChild("SellPet_RE")
+
+    while true do
+        task.wait()
         if AutoSell then
-            for i, v in pairs(game:GetService("Players"):GetPlayers()) do
-                if v.Name ~= game.Players.LocalPlayer.Name then
-                    local Pet = v.Character:FindFirstChildOfClass("Tool")
+            for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+                if v ~= game.Players.LocalPlayer then
+                    local Pet = v.Character and v.Character:FindFirstChildOfClass("Tool")
                     if Pet and Pet:GetAttribute("ItemType") == "Pet" then
-                        game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("SellPet_RE"):FireServer(Pet)
+                        for i = 1, 4500 do
+                            event:FireServer(Pet)
+                        end
                     end
                 end
             end
