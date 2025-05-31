@@ -35,8 +35,8 @@ local MainTab = Window:AddTab({ Title = "Main", Icon = "" })
 local AutoSell = false
 
 MainTab:AddToggle("dupemoney", {
-    Title = "Instant Money",
-    Description = "need 1 player hold the pet",
+    Title = "Instant Money [PATCHED]",
+    Description = "need 1 player hold the pet [find old server to dupe]",
     Default = false,
     Callback = function(Value)
         AutoSell = Value
