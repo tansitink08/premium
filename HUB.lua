@@ -6,7 +6,7 @@ local function safeLoad(url)
     if success then
         print("Chạy con cờ hó m script thành công!")
     else
-        warn("executor m có vấn đề déo chạy đc: " .. errorMsg)
+        warn("một số lúc script sẽ không load đc: " .. errorMsg)
     end
 end
 
