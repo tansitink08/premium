@@ -15,11 +15,6 @@ local lastNotificationTime = 0
 local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
-        Text = "Loading",
-        Duration = 5
-    })
     lastNotificationTime = currentTime
 end
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -1330,12 +1325,12 @@ end
 print("--[[Loaded UI]]--")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
-    Title = "Hiru Hub-Blox Fruit",
-    SubTitle = "by Kiddo",
+    Title = "HuyDz Hub [ Blox Fruits ] By ItzTom",
+    SubTitle = "kid",
     TabWidth = 155,
-    Size = UDim2.fromOffset(555, 320),
+    Size = UDim2.fromOffset(500, 350),
     Acrylic = false, 
-    Theme = "Luffy",
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
 Shop = Window:AddTab({ Title = "Tab Shop", Icon = "" })
@@ -2562,22 +2557,25 @@ spawn(function()
 end)
 getgenv().FastAttack = false
 Toggle = Settings:AddToggle("Toggle", {Title = "Fast Attack", Default = true})
-local FastAttackTask
+local RunService = game:GetService("RunService")
+local FastAttackConnection
+
 local function FastAttackLoop()
-    while getgenv().FastAttack do
-        if type(AttackNoCoolDown) == "function" then
+    FastAttackConnection = RunService.Heartbeat:Connect(function()
+        if getgenv().FastAttack and type(AttackNoCoolDown) == "function" then
             AttackNoCoolDown()
         end
-        task.wait(0.1)
-    end
+    end)
 end
+
 Toggle:OnChanged(function(Value)
     getgenv().FastAttack = Value
-    if Value and not FastAttackTask then
-        FastAttackTask = task.spawn(FastAttackLoop)
+    if Value and not FastAttackConnection then
+        FastAttackLoop()
     end
-    if not Value and FastAttackTask then
-        FastAttackTask = nil
+    if not Value and FastAttackConnection then
+        FastAttackConnection:Disconnect()
+        FastAttackConnection = nil
     end
 end)
 Toggle = Settings:AddToggle("Toggle", {Title = "Bring Mob", Default = true})
@@ -8035,42 +8033,93 @@ Input = PVP:AddInput("Input", {
      end
 })
 ----------------------------------------------------------------------------------------------------
-print("--[[ImageButton]]--")
-local Players = game:GetService("Players")
-local ContentProvider = game:GetService("ContentProvider")
-local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
-local existingGui = playerGui:FindFirstChild("CustomScreenGui")
-if existingGui then
-    existingGui:Destroy()
-end
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Yes Or No";
+    Text = "U want reset Config?";
+    Icon = "rbxassetid://5009915795";
+    Duration = 1e5;
+	Button1 = "Yes";
+	Button2 = "No";
+})
+
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "CustomScreenGui"
-ScreenGui.Parent = playerGui
-local Button = Instance.new("ImageButton")
-Button.Name = "CustomButton"
-Button.Parent = ScreenGui
-Button.Size = UDim2.new(0, 50, 0, 50)
-Button.Position = UDim2.new(0.015, 0, 0.02, 20)
-Button.BackgroundTransparency = 1
-Button.Image = "rbxassetid://100310827714719"
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
 local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game:GetService("CoreGui")  
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.AnchorPoint = Vector2.new(0.1, 0.1)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 0
+Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame.BorderSizePixel = 1
+Frame.Position = UDim2.new(0, 20, 0.1, -6)  
+Frame.Size = UDim2.new(0, 50, 0, 50)
+Frame.Name = "dut dit"
+
+ImageLabel.Parent = Frame
+ImageLabel.Name = "Banana Test"
+ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+ImageLabel.Size = UDim2.new(0, 40, 0, 40)
+ImageLabel.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderSizePixel = 1
+ImageLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Image = "http://www.roblox.com/asset/?id= 5009915795"
+
 UICorner.CornerRadius = UDim.new(1, 0)
-UICorner.Parent = Button
-local imageLoaded = false
-ContentProvider:PreloadAsync({Button.Image}, function()
-    imageLoaded = true
-end)
-Button.MouseButton1Click:Connect(function()
-    if not imageLoaded then
-        return
+UICorner.Parent = Frame
+
+TextButton.Name = "TextButton"
+TextButton.Parent = Frame
+TextButton.AnchorPoint = Vector2.new(0, 0)
+TextButton.Position = UDim2.new(0, 0, 0, 0)
+TextButton.Size = UDim2.new(1, 0, 1, 0)
+TextButton.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
+TextButton.BackgroundTransparency = 1
+TextButton.BorderSizePixel = 1
+TextButton.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextButton.TextColor3 = Color3.fromRGB(27, 42, 53)
+TextButton.Text = ""
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextSize = 8
+TextButton.TextTransparency = 0
+
+local TweenService = game:GetService("TweenService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+
+local zoomedIn = false
+local originalSize = UDim2.new(0, 40, 0, 40)
+local zoomedSize = UDim2.new(0, 30, 0, 30)
+local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+local faded = false
+local fadeInTween = TweenService:Create(Frame, tweenInfo, {BackgroundTransparency = 0.25})
+local fadeOutTween = TweenService:Create(Frame, tweenInfo, {BackgroundTransparency = 0})
+
+TextButton.MouseButton1Down:Connect(function()
+
+    if zoomedIn then
+        TweenService:Create(ImageLabel, tweenInfo, {Size = originalSize}):Play()
+    else
+        TweenService:Create(ImageLabel, tweenInfo, {Size = zoomedSize}):Play()
     end
-    local VirtualInputManager = game:GetService("VirtualInputManager")
-    if VirtualInputManager then
-        task.defer(function()
-            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
-            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftControl, false, game)
-        end)
+    zoomedIn = not zoomedIn
+
+    if faded then
+        fadeOutTween:Play()
+    else
+        fadeInTween:Play()
     end
+    faded = not faded
+
+    VirtualInputManager:SendKeyEvent(true, "LeftControl", false, game)
 end)
 --\\ ♡VIP♡
 ----------------------------------------------------------------------------------------------------
@@ -8110,10 +8159,5 @@ local lastNotificationTime = 0
 local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
-        Text = "Successfully",
-        Duration = 1
-    })
     lastNotificationTime = currentTime
 end
